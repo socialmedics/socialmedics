@@ -1,8 +1,6 @@
-CREATE TABLE "user"
+CREATE TABLE public.patients
 (
-    id INTEGER DEFAULT nextval('user_id_seq'::regclass) PRIMARY KEY NOT NULL,
-    name TEXT NOT NULL,
-    surname TEXT NOT NULL
+    ID SERIAL PRIMARY KEY NOT NULL,
+    NAME TEXT NOT NULL,
+    SURNAME TEXT NOT NULL
 );
-INSERT INTO user (name,surname)
-VALUES ('yonay','cabrera');

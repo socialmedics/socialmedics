@@ -5,9 +5,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import com.socialMedicals.entity.User;
-import com.socialMedicals.repository.UserRepository;
+import com.socialMedicals.entity.Patient;
+import com.socialMedicals.repository.PatientRepository;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
@@ -16,24 +17,25 @@ import static org.springframework.http.HttpStatus.CREATED;
 
 
 @Controller
-public class UserController {
+public class PatientController {
 
-    private final UserRepository userRepository;
+    private final PatientRepository patientRepository;
 
     @Autowired
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public PatientController(PatientRepository patientRepository) {
+        this.patientRepository = patientRepository;
     }
 
-    @RequestMapping(path = "/users", method = GET)
+    @RequestMapping(value = "/patients", method = GET)
     public String findAllUser(Model model){
-        model.addAttribute("users", userRepository.findAll());
-        return "users";
+        model.addAttribute("patients", patientRepository.findAll());
+        return "patients";
     }
 
-    @RequestMapping(path = "/users", method = POST)
+    @RequestMapping(value = "/patients", method = POST)
     @ResponseStatus(code = CREATED)
-    public void addUser(@RequestBody User user){
-        userRepository.saveAndFlush(user);
+    public void addUser(@RequestBody Patient patient){
+        System.out.println(patient.toString());
+        patientRepository.saveAndFlush(patient);
     }
 }
