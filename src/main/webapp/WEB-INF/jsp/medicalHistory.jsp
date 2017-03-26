@@ -1,5 +1,6 @@
 <%@ page import="com.socialMedicals.entity.Patient" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.socialMedicals.entity.MedicalHistory" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +9,45 @@
 </head>
 <body>
 <h1>1. DATOS DE IDENTIFICACION DEL PACIENTE</h1>
+
+<%--<%
+    for (MedicalHistory medicalHistory : (List<MedicalHistory>)request.getAttribute("medicalhistory")) {
+        out.println(medicalHistory.getDoctor());
+    }
+%>--%>
+
+<select>
+    <%
+        for (MedicalHistory medicalHistory : (List
+                <MedicalHistory>) request.getAttribute("medicalhistory")) {
+    %>
+    <option>
+        <%=
+        medicalHistory.getName()
+        %>
+    </option>
+    <%
+        }
+    %>
+</select>
+<%--
+    No puedo obtener datos de la tabla patients desde otro jsp
+<select>
+    <%
+        for (Patient patient : (List
+                <Patient>) request.getAttribute("patients")) {
+    %>
+    <option>
+        <%=
+        patient.getName()
+        %>
+    </option>
+    <%
+        }
+    %>
+</select>
+--%>
+
 
 <table>
     <tr>

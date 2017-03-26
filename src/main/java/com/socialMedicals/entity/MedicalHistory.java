@@ -89,4 +89,19 @@ public class MedicalHistory {
     public void setDoctor(String doctor) {
         this.doctor = doctor;
     }
+
+    @Override
+    public String toString() {
+        return "MedicalHistory{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", sex='" + sex + '\'' +
+                ", borndate='" + borndate + '\'' +
+                ", nationality='" + nationality + '\'' +
+                ", birthplace='" + birthplace + '\'' +
+                ", historydate='" + historydate + '\'' +
+                ", historytime='" + historytime + '\'' +
+                ", doctor='" + doctor + '\'' +
+                '}';
+    }
 }
