@@ -18,6 +18,7 @@
     }
 %>--%>
 
+<%--
 <select>
     <%
         for (MedicalHistory medicalHistory : (List
@@ -32,9 +33,9 @@
         }
     %>
 </select>
-<%--
-    No puedo obtener datos de la tabla patients desde otro jsp
-<select>
+--%>
+
+<%--<select>
     <%
         for (Patient patient : (List
                 <Patient>) request.getAttribute("patients")) {
@@ -47,41 +48,9 @@
     <%
         }
     %>
-</select>
---%>
+</select>--%>
 
-
-<%--
-<table>
-    <tr>
-        <td>
-            Apellidos y Nombre:
-        </td>
-        <td>
-            Sexo:
-        </td>
-        <td>
-            Fecha de nacimiento:
-        </td>
-        <td>
-            Lugar de nacimiento:
-        </td>
-    </tr>
-    <tr>
-        <td>
-            Fecha de elaboracion del historial:
-        </td>
-        <td>
-            Hora de elaboracion:
-        </td>
-        <td>
-            Atentido por:
-        </td>
-    </tr>
-</table>
---%>
-
-<form action="" method="post">
+<form action="/medicalHistory" method="post">
     <input type="text" placeholder="Nombre" name="name">
     <input type="text" placeholder="Sexo" name="sex">
     <input type="text" placeholder="Fecha de Nacimiento" name="borndate">

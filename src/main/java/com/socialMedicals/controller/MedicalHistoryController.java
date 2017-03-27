@@ -32,9 +32,10 @@ public class MedicalHistoryController {
     }
 
     @RequestMapping(value = "/medicalHistory", method = POST)
-    @ResponseStatus(code = CREATED)
-    public void addMedicalHistory(MedicalHistory medicalHistory){
+    public String addMedicalHistory(MedicalHistory medicalHistory){
         medicalHistoryRepository.saveAndFlush(medicalHistory);
+        return "redirect:/medicalHistory";
     }
+
 }
 

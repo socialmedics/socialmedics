@@ -21,5 +21,32 @@
     <input type="submit" value="submit">
 </form>
 
+<table>
+    <tr>
+        <td>
+            Apellidos y Nombre:
+        </td>
+        <td>
+            Sexo:
+        </td>
+        <td>
+            Fecha de nacimiento:
+        </td>
+        <td>
+            Lugar de nacimiento:
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Fecha de elaboracion del historial:
+        </td>
+        <td>
+            Hora de elaboracion:
+        </td>
+        <td>
+            Atentido por:
+        </td>
+    </tr>
+</table>
 </body>
 </html>
