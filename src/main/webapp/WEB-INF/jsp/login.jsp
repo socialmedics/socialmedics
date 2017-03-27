@@ -9,10 +9,10 @@
 </head>
 <body>
 <div>
-    <form action="/home" method = "get">
-        <input type="text" name="name"><br />
-        <input type="text" name="surname"/>
-        <button onclick="myFunction">Login</button>
+    <form action="/login" method = "post">
+        <input type="text" name="name" required><br />
+        <input type="text" name="surname" required/>
+        <input type="submit" value="login">
     </form>
 
 </div>
