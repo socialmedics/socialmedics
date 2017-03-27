@@ -42,9 +42,4 @@ public class PatientController {
         patientRepository.saveAndFlush(patient);
     }
 
-    @RequestMapping(value = "/doctorHome", method = GET)
-    public String doctorHome (Model model){
-        return "doctorHome";
-    }
-
 }

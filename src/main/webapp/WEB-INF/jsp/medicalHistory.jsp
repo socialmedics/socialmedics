@@ -12,6 +12,7 @@
 <body>
 <h1>1. DATOS DE IDENTIFICACION DEL PACIENTE</h1>
 
+<%--
 <form action="/medicalHistory" method="post">
     <select name="selector">
         <%
@@ -29,8 +30,22 @@
     </select>
     <input type="submit" value="submit">
 </form>
+--%>
 
-<form action="/medicalHistoryForm" method="post">
+<form action="" method="post">
+    <ul>
+        <%
+            for (Patient patient : (List<Patient>) request.getAttribute("patients")) {
+        %>
+        <li> <a href=""> <%= patient.getName() + " " + patient.getSurname() %> </a> </li>
+        <%
+        }
+        %>
+    </ul>
+</form>
+
+
+<%--<form action="/medicalHistoryForm" method="post">
     <input type="text" placeholder="Nombre" name="name">
     <input type="text" placeholder="Sexo" name="sex">
     <input type="text" placeholder="Fecha de Nacimiento" name="borndate">
@@ -40,7 +55,7 @@
     <input type="text" placeholder="Hora del Informe" name="historytime">
     <input type="text" placeholder="Doctor" name="doctor">
     <input type="submit" value="submit">
-</form>
+</form>--%>
 
 </body>
 </html>
