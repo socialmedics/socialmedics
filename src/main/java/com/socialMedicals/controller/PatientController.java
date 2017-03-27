@@ -3,11 +3,14 @@ package com.socialMedicals.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import com.socialMedicals.entity.Patient;
 import com.socialMedicals.repository.PatientRepository;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import javax.persistence.Entity;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -38,4 +41,10 @@ public class PatientController {
         System.out.println(patient.toString());
         patientRepository.saveAndFlush(patient);
     }
+
+    @RequestMapping(value = "/doctorHome", method = GET)
+    public String doctorHome (Model model){
+        return "doctorHome";
+    }
+
 }

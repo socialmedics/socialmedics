@@ -1,7 +1,7 @@
 <%@ page import="com.socialMedicals.entity.Patient" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.socialMedicals.entity.MedicalHistory" %>
-<%@ page import="javax.xml.stream.Location" %>
+<%@ page import="com.socialMedicals.repository.PatientRepository" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,45 +12,25 @@
 <body>
 <h1>1. DATOS DE IDENTIFICACION DEL PACIENTE</h1>
 
-<%--<%
-    for (MedicalHistory medicalHistory : (List<MedicalHistory>)request.getAttribute("medicalhistory")) {
-        out.println(medicalHistory.getDoctor());
-    }
-%>--%>
-
-<%--
-<select>
-    <%
-        for (MedicalHistory medicalHistory : (List
-                <MedicalHistory>) request.getAttribute("medicalhistory")) {
-    %>
-    <option>
-        <%=
-        medicalHistory.getName()
-        %>
-    </option>
-    <%
-        }
-    %>
-</select>
---%>
-
-<%--<select>
-    <%
-        for (Patient patient : (List
-                <Patient>) request.getAttribute("patients")) {
-    %>
-    <option>
-        <%=
-        patient.getName()
-        %>
-    </option>
-    <%
-        }
-    %>
-</select>--%>
-
 <form action="/medicalHistory" method="post">
+    <select name="selector">
+        <%
+            List<Patient> list = (List) request.getAttribute("patients");
+            for (Patient patient : list) {
+        %>
+        <option value=<%= patient.getName() %>>
+            <%=
+            patient.getName()
+            %>
+        </option>
+        <%
+            }
+        %>
+    </select>
+    <input type="submit" value="submit">
+</form>
+
+<form action="/medicalHistoryForm" method="post">
     <input type="text" placeholder="Nombre" name="name">
     <input type="text" placeholder="Sexo" name="sex">
     <input type="text" placeholder="Fecha de Nacimiento" name="borndate">

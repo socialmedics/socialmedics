@@ -1,5 +1,5 @@
 INSERT INTO patients(name, surname)
-VALUES ('daniel', 'san juan');
+VALUES ('yonay', 'san juan');
 
 
 INSERT INTO medicalhistory(name,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
