@@ -9,7 +9,13 @@
 </head>
 <body>
 <h1>Hello</h1>
-
+<div>
+    <form action="/patients" method = "post">
+        <input type="text" name="name"><br />
+        <input type="text" name="surname"/>
+        <input type="submit" value="registrar">
+    </form>
+</div>
 <h2>Patients</h2>
 <%
     for (Patient patient : (List<Patient>)request.getAttribute("patients")) {

@@ -1,6 +1,7 @@
 package com.socialMedicals.controller;
 
 
+import com.socialMedicals.entity.Patient;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,9 +17,11 @@ public class HelloController {
     }
 
     @RequestMapping("/hello")
-    public String hello2() {
-        System.out.println("foo");
-        return "foo";
+    @ResponseBody
+    public String hello2(@ModelAttribute("patients")Patient patient) {
+        System.out.println(patient.getName());
+        System.out.println(patient.getSurname());
+        return "tomate";
     }
     @RequestMapping(path = "/", method = GET)
     @ResponseBody

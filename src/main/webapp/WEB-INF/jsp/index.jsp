@@ -9,12 +9,7 @@
 <h1>Hello</h1>
 
 <h2>Sammu es un Pussy ${message}</h2>
-<div>
-    <form action="/hello">
-        <input type="text" name="foo" value="foo"/>
-        <input type="submit"/>
-    </form>
-</div>
+
 
 </body>
 </html>
