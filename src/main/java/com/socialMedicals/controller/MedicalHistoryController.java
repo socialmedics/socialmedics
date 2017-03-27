@@ -5,7 +5,6 @@ import com.socialMedicals.repository.MedicalHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -34,7 +33,7 @@ public class MedicalHistoryController {
 
     @RequestMapping(value = "/medicalHistory", method = POST)
     @ResponseStatus(code = CREATED)
-    public void addMedicalHistory(@RequestBody MedicalHistory medicalHistory){
+    public void addMedicalHistory(MedicalHistory medicalHistory){
         medicalHistoryRepository.saveAndFlush(medicalHistory);
     }
 }
