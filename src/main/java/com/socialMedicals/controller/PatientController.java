@@ -8,15 +8,11 @@ import com.socialMedicals.entity.Patient;
 import com.socialMedicals.repository.PatientRepository;
 
 import javax.servlet.http.HttpSession;
-import java.sql.SQLDataException;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
-
-import static org.springframework.http.HttpStatus.CREATED;
-
 
 
 @Controller
@@ -48,20 +44,20 @@ public class PatientController {
     }
 
     @RequestMapping(value = "/login", method = POST)
-    public String verifyLogin(HttpSession httpSession, Model model, @RequestParam(value = "name", required= false) String name,
-                              @RequestParam(value = "surname",required = false) String surname){
+    public String verifyLogin(HttpSession httpSession, Model model, @RequestParam(value = "email", required= false) String email,
+                              @RequestParam(value = "password",required = false) String password){
         List<Patient>patients2 = new ArrayList<>();
         Patient patient = new Patient();
-        patient = patientRepository.findByName(name);
-        if(patient != null && patient.getName().equals(name) && patient.getSurname().equals(surname)){
-            httpSession.setAttribute(patient.getName(),"done");
+        patient = patientRepository.findByEmail(email);
+        if(patient != null && patient.getEmail().equals(email) && patient.getPassword().equals(password)){
+            httpSession.setAttribute(patient.getEmail(),"done");
             return "redirect:/home";
         }
         return "redirect:/login";
     }
 
     @RequestMapping(value = "/home", method = GET)
-    public String welcome(Model model){
+        public String welcome(Model model){
         model.addAttribute("patients", patientRepository.findAll());
         return "welcome";
     }

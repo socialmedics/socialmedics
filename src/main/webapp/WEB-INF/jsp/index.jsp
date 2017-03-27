@@ -6,9 +6,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<h1>Hello</h1>
+<form action="/patients">
+    <input type="submit" value = "registrar"><br/>
+</form>
+<form action="/login">
+    <input type="submit" value = "login"><br/>
+</form>
 
-<h2>Sammu es un Pussy ${message}</h2>
+
 
 
 </body>

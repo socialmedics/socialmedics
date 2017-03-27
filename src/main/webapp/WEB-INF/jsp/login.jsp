@@ -10,10 +10,16 @@
 <body>
 <div>
     <form action="/login" method = "post">
-        <input type="text" name="name" required><br />
-        <input type="text" name="surname" required/>
-        <input type="submit" value="login">
+        <label>email: </label>
+        <input type="text" name="email" required><br />
+        <label>password: </label>
+        <input type="password" name="password" required/>
+        <input type="submit" value="login"><br />
     </form>
+    <form action="/">
+        <input type="submit" value="inicio">
+    </form>
+    
 
 </div>
 </body>
