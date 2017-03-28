@@ -17,6 +17,15 @@ public class MedicalHistory {
     private String historydate;
     private String historytime;
     private String doctor;
+    private String email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public int getId() {
         return id;

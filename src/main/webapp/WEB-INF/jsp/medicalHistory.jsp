@@ -1,7 +1,6 @@
 <%@ page import="com.socialMedicals.entity.Patient" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.socialMedicals.entity.MedicalHistory" %>
-<%@ page import="com.socialMedicals.repository.PatientRepository" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,17 +31,15 @@
 </form>
 --%>
 
-<form action="" method="post">
-    <ul>
-        <%
-            for (Patient patient : (List<Patient>) request.getAttribute("patients")) {
-        %>
-        <li> <a href=""> <%= patient.getName() + " " + patient.getSurname() %> </a> </li>
-        <%
-        }
-        %>
-    </ul>
+<%
+        for (Patient patient : (List<Patient>) request.getAttribute("patients")) {
+%>
+<form action="/doctorMedicalHistory" method="post">
+    <Button name="email" value=<%= patient.getEmail() %> type="submit"><%= patient.getName() + " " + patient.getSurname() %> </Button>
 </form>
+<%
+    }
+%>
 
 
 <%--<form action="/medicalHistoryForm" method="post">
