@@ -1,5 +1,6 @@
 package com.socialMedicals.controller;
 
+import com.socialMedicals.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +20,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class PatientController {
 
     private final PatientRepository patientRepository;
+    private final UsuariosRepository usuariosRepository;
+
 
     @Autowired
-    public PatientController(PatientRepository patientRepository) {
+    public PatientController(PatientRepository patientRepository, UsuariosRepository usuariosRepository) {
         this.patientRepository = patientRepository;
+        this.usuariosRepository = usuariosRepository;
     }
 
     @RequestMapping(value = "/register", method = GET)
@@ -35,8 +39,17 @@ public class PatientController {
     public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect,
                           @RequestParam(name = "name")String name,@RequestParam(name = "surname")String surname,
                           @RequestParam(name = "email")String email,@RequestParam(name = "password")String password,
-                          @RequestParam(name = "center")String center){
+                          @RequestParam(name = "center")String center,
+                          @RequestParam(name = "medicalhistory")String medicalhistory){
+
         if(radioSelect.equals("medico")){
+            patient.setName(name);
+            patient.setSurname(surname);
+            patient.setCenter(center);
+            patient.setEmail(email);
+            patient.setPassword(password);
+            patient.setMedicalhistory(medicalhistory);
+            usuariosRepository.saveAndFlush(patient);
             return "redirect:/medicsRegister";
         }
         patientRepository.saveAndFlush(patient);
