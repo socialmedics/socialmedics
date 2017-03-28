@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
-<form action="/patients">
+<form action="/register">
     <input type="submit" value = "registrar"><br/>
 </form>
 <form action="/login">

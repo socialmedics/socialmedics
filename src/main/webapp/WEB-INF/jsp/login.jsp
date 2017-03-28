@@ -19,7 +19,7 @@
     <form action="/">
         <input type="submit" value="inicio">
     </form>
-    
+
 
 </div>
 </body>

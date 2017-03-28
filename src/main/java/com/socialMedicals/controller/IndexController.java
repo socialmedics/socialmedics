@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 @Controller
-public class HelloController {
+public class IndexController {
 
     @RequestMapping(value = "/" , method = GET)
     public String index(Model model) {

@@ -10,7 +10,7 @@
 <body>
 <h1>Registro</h1>
 <div>
-    <form action="/patients" method = "post">
+    <form action="/register" method = "post">
         <label>nombre: </label>
         <input type="text" name="name"><br />
         <label>apellido: </label>
@@ -28,6 +28,9 @@
     <form action="/">
         <input type="submit" value="inicio">
     </form>
+</div>
+<div class="col s6 offset-s6">
+    <h1>holita</h1>
 </div>
 <h2>Patients</h2>
 <%
