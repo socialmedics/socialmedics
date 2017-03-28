@@ -1,3 +1,4 @@
+<%@ page import="com.socialMedicals.entity.MedicalHistory" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,8 +8,9 @@
 </head>
 <body>
 <h1> Historial del Paciente {} </h1>
-<%--<%=
-    out.println(request.getAttribute("medicalHistory"));
-%>--%>
+<%
+
+    MedicalHistory medicalHistory = (MedicalHistory)request.getAttribute("medicalHistory");
+%>
 </body>
 </html>
