@@ -1,5 +1,6 @@
 package com.socialMedicals.controller;
 
+import com.socialMedicals.entity.User;
 import com.socialMedicals.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,13 +44,13 @@ public class PatientController {
                           @RequestParam(name = "medicalhistory")String medicalhistory){
 
         if(radioSelect.equals("medico")){
-            patient.setName(name);
-            patient.setSurname(surname);
-            patient.setCenter(center);
-            patient.setEmail(email);
-            patient.setPassword(password);
-            patient.setMedicalhistory(medicalhistory);
-            usuariosRepository.saveAndFlush(patient);
+            User user = new User();
+            user.setName(name);
+            user.setSurname(surname);
+            user.setCenter(center);
+            user.setEmail(email);
+            user.setPassword(password);
+            usuariosRepository.saveAndFlush(user);
             return "redirect:/medicsRegister";
         }
         patientRepository.saveAndFlush(patient);
