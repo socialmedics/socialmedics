@@ -32,8 +32,13 @@ public class PatientController {
     }
 
     @RequestMapping(value = "/register", method = POST)
-    public String addUser(@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect){
-        System.out.println(radioSelect);
+    public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect,
+                          @RequestParam(name = "name")String name,@RequestParam(name = "surname")String surname,
+                          @RequestParam(name = "email")String email,@RequestParam(name = "password")String password,
+                          @RequestParam(name = "center")String center){
+        if(radioSelect.equals("medico")){
+            return "redirect:/medicsRegister";
+        }
         patientRepository.saveAndFlush(patient);
         return "redirect:/register";
     }
