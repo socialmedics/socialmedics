@@ -23,15 +23,16 @@
         <input type="password" name="password"/><br />
         <label>historial medico: </label>
         <textarea rows="4" cols="50" name="medicalhistory"></textarea><br />
+        <input type="radio" name="usuario" value="paciente" checked/>paciente<br />
+        <input type="radio" name="usuario" value="medico"/>medico<br />
         <input type="submit" value="registrar"><br />
     </form>
+
     <form action="/">
         <input type="submit" value="inicio">
     </form>
 </div>
-<div class="col s6 offset-s6">
-    <h1>holita</h1>
-</div>
+
 <h2>Patients</h2>
 <%
     for (Patient patient : (List<Patient>)request.getAttribute("patients")) {
