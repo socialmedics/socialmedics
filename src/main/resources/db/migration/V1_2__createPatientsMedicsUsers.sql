@@ -18,7 +18,7 @@ CREATE TABLE public.patients
     email VARCHAR(255) UNIQUE ,
     password VARCHAR(40) NOT NULL,
     center VARCHAR(40) NOT NULL,
-    medicalhistory VARCHAR(255)
+    medicalhistory TEXT
 );
 
 
@@ -29,5 +29,6 @@ CREATE TABLE public.usuarios
     surname VARCHAR(40) NOT NULL,
     email VARCHAR(255) UNIQUE ,
     password VARCHAR(40) NOT NULL,
-    center VARCHAR(40) NOT NULL
+    center VARCHAR(40) NOT NULL,
+    type VARCHAR(40) NOT NULL
 );

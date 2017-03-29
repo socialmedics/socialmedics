@@ -14,6 +14,10 @@ public class Users {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+
+
+
+    private String type;
     private String email;
     private String center;
     private String password;
@@ -26,6 +30,9 @@ public class Users {
 
     public String getName() {
         return name;
+    }
+    public String getType() {
+        return type;
     }
 
     public String getEmail() {
@@ -46,6 +53,9 @@ public class Users {
 
     public void setId(int id) {
         this.id = id;
+    }
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void setName(String name) {

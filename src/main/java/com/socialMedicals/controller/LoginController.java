@@ -1,7 +1,10 @@
 package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Patient;
+import com.socialMedicals.entity.Users;
+import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
+import com.socialMedicals.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,10 +26,16 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class LoginController {
 
     private final PatientRepository patientRepository;
+    private final UsuariosRepository usuariosRepository;
+    private final MedicsRepository medicsRepository;
+
 
     @Autowired
-    public LoginController(PatientRepository patientRepository) {
+    public LoginController(PatientRepository patientRepository, UsuariosRepository usuariosRepository,
+                           MedicsRepository medicsRepository) {
         this.patientRepository = patientRepository;
+        this.usuariosRepository = usuariosRepository;
+        this.medicsRepository = medicsRepository;
     }
 
     @RequestMapping(value = "/login", method = GET)
@@ -38,19 +47,28 @@ public class LoginController {
     @RequestMapping(value = "/login", method = POST)
     public String verifyLogin(HttpSession httpSession, Model model, @RequestParam(value = "email", required= false) String email,
                               @RequestParam(value = "password",required = false) String password){
-        List<Patient> patients2 = new ArrayList<>();
-        Patient patient = new Patient();
-        patient = patientRepository.findByEmail(email);
-        if(patient != null && patient.getEmail().equals(email) && patient.getPassword().equals(password)){
-            httpSession.setAttribute(patient.getEmail(),"done");
-            return "redirect:/home";
+        Users users = usuariosRepository.findByEmail(email);
+        if(users != null && users.getEmail().equals(email) && users.getPassword().equals(password) &&
+                users.getType().equals("medico")){
+            httpSession.setAttribute(users.getEmail(),"done");
+            return "redirect:/homeMedic";
+        }else if(users != null && users.getEmail().equals(email) && users.getPassword().equals(password) &&
+                users.getType().equals("paciente")){
+            httpSession.setAttribute(users.getEmail(),"done");
+            return "redirect:/homePatient";
         }
         return "redirect:/login";
     }
 
-    @RequestMapping(value = "/home", method = GET)
-    public String welcome(Model model){
+    @RequestMapping(value = "/homeMedic", method = GET)
+    public String welcomeMedic(Model model){
+        model.addAttribute("medics", medicsRepository.findAll());
+        return "welcomeDoctors";
+    }
+
+    @RequestMapping(value = "/homePatient", method = GET)
+    public String welcomePatient(Model model){
         model.addAttribute("patients", patientRepository.findAll());
-        return "welcome";
+        return "welcomePatient";
     }
 }

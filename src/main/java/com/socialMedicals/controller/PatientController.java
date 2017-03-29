@@ -46,9 +46,18 @@ public class PatientController {
             users.setCenter(center);
             users.setEmail(email);
             users.setPassword(password);
+            users.setType("medico");
             usuariosRepository.saveAndFlush(users);
             return "redirect:/medicsRegister";
         }
+        Users users = new Users();
+        users.setName(name);
+        users.setSurname(surname);
+        users.setCenter(center);
+        users.setEmail(email);
+        users.setPassword(password);
+        users.setType("paciente");
+        usuariosRepository.saveAndFlush(users);
         patientRepository.saveAndFlush(patient);
         return "redirect:/register";
     }
