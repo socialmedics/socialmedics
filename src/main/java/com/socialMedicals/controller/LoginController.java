@@ -1,5 +1,7 @@
 package com.socialMedicals.controller;
 
+import com.socialMedicals.entity.Medics;
+import com.socialMedicals.entity.Patient;
 import com.socialMedicals.entity.Users;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
@@ -36,28 +38,25 @@ public class LoginController {
     }
 
     @RequestMapping(value = "/login", method = GET)
-    public String loginForm(Model model){
+    public String loginForm(Model model) {
         model.addAttribute("patients", patientRepository.findAll());
         return "login";
     }
 
     @RequestMapping(value = "/login", method = POST)
-    public String verifyLogin(HttpSession httpSession, Model model, @RequestParam(value = "email", required= false) String email,
-                              @RequestParam(value = "password",required = false) String password){
-        Users users = usuariosRepository.findByEmail(email);
-        if(typeOfUser(email, password, users, "medico")){
-            httpSession.setAttribute(users.getEmail(),"done");
+    public String verifyLogin(HttpSession httpSession, Model model, @RequestParam(value = "email", required = false) String email,
+                              @RequestParam(value = "password", required = false) String password) {
+        Medics medics = medicsRepository.findByEmail(email);
+        Patient patient = patientRepository.findByEmail(email);
+
+        if (medics != null && medics.getPassword().equals(password)) {
+            httpSession.setAttribute(medics.getEmail(), "done");
             return "redirect:/homeMedic";
-        }else if(typeOfUser(email, password, users, "paciente")){
-            httpSession.setAttribute(users.getEmail(),"done");
+        } else if (patient != null && patient.getPassword().equals(password)){
+            httpSession.setAttribute(patient.getEmail() , "done");
             return "redirect:/homePatient";
         }
         return "redirect:/login";
-    }
-
-    private boolean typeOfUser(@RequestParam(value = "email", required = false) String email, @RequestParam(value = "password", required = false) String password, Users users, String type) {
-        return users != null && users.getEmail().equals(email) && users.getPassword().equals(password) &&
-                users.getType().equals(type);
     }
 
 

@@ -9,5 +9,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface MedicsRepository extends JpaRepository<Medics,Integer> {
+    Medics findByEmail(String email);
 
 }
