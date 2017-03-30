@@ -17,9 +17,7 @@ import java.util.List;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
-/**
- * Created by yonay on 28/03/2017.
- */
+
 
 @Controller
 public class MedicsController {

@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
-/**
- * Created by yonay on 30/03/2017.
- */
+
 @Controller
 public class MedicsKeyFailController {
 

@@ -9,9 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-/**
- * Created by yonay on 30/03/2017.
- */
+
 
 @Controller
 public class Home {
