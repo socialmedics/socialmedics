@@ -4,10 +4,12 @@ import com.socialMedicals.entity.Medics;
 import com.socialMedicals.entity.Users;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.UsuariosRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ public class MedicsController {
     private final UsuariosRepository usuariosRepository;
     private final MedicsRepository medicsRepository;
 
+    @Autowired
     public MedicsController(UsuariosRepository usuariosRepository,MedicsRepository medicsRepository) {
         this.usuariosRepository = usuariosRepository;
         this.medicsRepository=medicsRepository;
@@ -40,8 +43,11 @@ public class MedicsController {
     }
 
     @RequestMapping(value = "/medicsRegister", method = POST)
-    public String addUser(Model model, @ModelAttribute Medics medics) {
-        medicsRepository.saveAndFlush(medics);
-        return "redirect:/medicsRegister";
+    public String addUser(Model model, @ModelAttribute Medics medics, @RequestParam(name="access")String access) {
+        if(access.equals("1234")) {
+            medicsRepository.saveAndFlush(medics);
+            return "redirect:/medicsRegister";
+        }
+        return "redirect:/medicsRegisterFail";
     }
 }

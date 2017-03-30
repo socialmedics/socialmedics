@@ -14,15 +14,15 @@
     <form action="/medicsRegister" method = "post">
 
         <label>nombre: </label>
-        <input type="text" name="name" value="<%= users.getName()%>" required><br />
+        <input type="text" name="name" required><br />
         <label>apellido: </label>
-        <input type="text" name="surname" value="<%=users.getSurname()%>" required><br />
+        <input type="text" name="surname" required><br />
         <label>email: </label>
-        <input type="text" name="email" value="<%=users.getEmail()%>" required><br />
+        <input type="text" name="email" required><br />
         <label>centro: </label>
-        <input type="text" name="center" value="<%=users.getCenter()%>" required><br />
+        <input type="text" name="center" required><br />
         <label>password: </label>
-        <input type="password" name="password" value="<%=users.getPassword()%>" required/><br />
+        <input type="password" name="password" required><br />
         <label>especialidad: </label>
         <input type="text" name="especialidad" required/><br />
         <label>identificacion: </label>

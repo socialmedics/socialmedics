@@ -6,6 +6,7 @@ CREATE TABLE public.medicos
     email VARCHAR(255) UNIQUE ,
     password VARCHAR(40) NOT NULL,
     center VARCHAR(40) NOT NULL,
+    access VARCHAR(40) NOT NULL,
     especialidad VARCHAR(40) NOT NULL
 );
 

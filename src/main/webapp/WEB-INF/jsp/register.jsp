@@ -12,15 +12,15 @@
 <div>
     <form action="/register" method = "post">
         <label>nombre: </label>
-        <input type="text" name="name"><br />
+        <input type="text" name="name" required><br />
         <label>apellido: </label>
-        <input type="text" name="surname"><br />
+        <input type="text" name="surname" required><br />
         <label>email: </label>
-        <input type="text" name="email"><br />
+        <input type="text" name="email" required><br />
         <label>centro: </label>
-        <input type="text" name="center"><br />
+        <input type="text" name="center" required><br />
         <label>password: </label>
-        <input type="password" name="password"/><br />
+        <input type="password" name="password" required/><br />
         <label>historial medico: </label>
         <textarea rows="4" cols="50" name="medicalhistory"></textarea><br />
         <input type="radio" name="usuario" value="paciente" checked/>paciente<br />
