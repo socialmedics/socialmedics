@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Spring Framework Guru</title>
+    <title>SocialMedics</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
 <body>
