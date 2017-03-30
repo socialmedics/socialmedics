@@ -4,7 +4,7 @@ html, body {
     display: table;
     position: absolute;
     background-image:
-            url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-141427.png");
+            url("https://wallpapers.wallhaven.cc/wallpapers/full/wallhaven-156173.png");
 }
 .container {
     display: table-cell;
@@ -19,4 +19,7 @@ html, body {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+}
+.col-form-label{
+    color: green;
 }
