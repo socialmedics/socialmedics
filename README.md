@@ -1,5 +1,5 @@
 # SocialMedics
-Here we develop a project for the subjects of  _Software Architecture_ and  _Agile Development Methodologies_
+In this repository, we develop a project for the subjects of  _Software Architecture_ and  _Agile Development Methodologies_
 
 ## Our mission
 We want to create a new way of communication between  hospitals, doctors and patients. 
