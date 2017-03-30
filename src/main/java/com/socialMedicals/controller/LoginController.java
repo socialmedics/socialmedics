@@ -60,15 +60,5 @@ public class LoginController {
         return "redirect:/login";
     }
 
-    @RequestMapping(value = "/homeMedic", method = GET)
-    public String welcomeMedic(Model model){
-        model.addAttribute("medics", medicsRepository.findAll());
-        return "welcomeDoctors";
-    }
 
-    @RequestMapping(value = "/homePatient", method = GET)
-    public String welcomePatient(Model model){
-        model.addAttribute("patients", patientRepository.findAll());
-        return "welcomePatient";
-    }
 }
