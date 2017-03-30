@@ -10,8 +10,7 @@
 </head>
 <body>
 <div>
-    <%Users users =(Users) request.getAttribute("lastUser");%>
-    <form action="/medicsRegister" method = "post">
+    <form action="/medicsRegisterFail" method = "post">
 
         <label>nombre: </label>
         <input type="text" name="name" required><br />
@@ -32,12 +31,6 @@
     <form action="/">
         <input type="submit" value="inicio">
     </form>
-    <%
-        for (Medics medics : (List<Medics>)request.getAttribute("medics")) {
-            out.println((medics.getName() + "<br>")); ;
-            out.println((medics.getEmail() + "<br>")); ;
-        }
-    %>
 </div>
 </body>
 </html>
