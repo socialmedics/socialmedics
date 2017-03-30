@@ -1,4 +1,19 @@
-h1 {
-    color: red;
-    font-size: 50px;
+html, body {
+  height: 100% !important;
+  width: 100% !important;
+  display: table;
+  position: absolute;
+  background-image:
+    url("http://www.dentons.com/~/media/Images/Website/Background%20Images/Industry%20Sectors/Life%20Sciences%20and%20Health%20Care/956_health_care_02_1900x1500.jpg");
+}
+
+.container {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#principal {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
