@@ -1,6 +1,5 @@
 package com.socialMedicals.controller;
 
-import com.socialMedicals.entity.Patient;
 import com.socialMedicals.entity.Users;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
@@ -12,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -48,16 +45,19 @@ public class LoginController {
     public String verifyLogin(HttpSession httpSession, Model model, @RequestParam(value = "email", required= false) String email,
                               @RequestParam(value = "password",required = false) String password){
         Users users = usuariosRepository.findByEmail(email);
-        if(users != null && users.getEmail().equals(email) && users.getPassword().equals(password) &&
-                users.getType().equals("medico")){
+        if(typeOfUser(email, password, users, "medico")){
             httpSession.setAttribute(users.getEmail(),"done");
             return "redirect:/homeMedic";
-        }else if(users != null && users.getEmail().equals(email) && users.getPassword().equals(password) &&
-                users.getType().equals("paciente")){
+        }else if(typeOfUser(email, password, users, "paciente")){
             httpSession.setAttribute(users.getEmail(),"done");
             return "redirect:/homePatient";
         }
         return "redirect:/login";
+    }
+
+    private boolean typeOfUser(@RequestParam(value = "email", required = false) String email, @RequestParam(value = "password", required = false) String password, Users users, String type) {
+        return users != null && users.getEmail().equals(email) && users.getPassword().equals(password) &&
+                users.getType().equals(type);
     }
 
 
