@@ -11,25 +11,6 @@
 <body>
 <h1>1. DATOS DE IDENTIFICACION DEL PACIENTE</h1>
 
-<%--
-<form action="/medicalHistory" method="post">
-    <select name="selector">
-        <%
-            List<Patient> list = (List) request.getAttribute("patients");
-            for (Patient patient : list) {
-        %>
-        <option value=<%= patient.getName() %>>
-            <%=
-            patient.getName()
-            %>
-        </option>
-        <%
-            }
-        %>
-    </select>
-    <input type="submit" value="submit">
-</form>
---%>
 
 <%
         for (Patient patient : (List<Patient>) request.getAttribute("patients")) {

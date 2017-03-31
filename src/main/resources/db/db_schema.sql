@@ -1,9 +1,20 @@
 INSERT INTO patients(name, surname, email)
-VALUES ('russo', 'san juan', 'russo@email');
-
+VALUES ('Daniel', 'San Juan', 'daniel@email.com');
+INSERT INTO patients(name, surname, email)
+VALUES ('Stefan', 'Hautz', 'stefan@email.com');
+INSERT INTO patients(name, surname, email)
+VALUES ('Yonay', 'Cabrera', 'yonay@email.com');
+INSERT INTO patients(name, surname, email)
+VALUES ('Jonatan', 'Acosta', 'jonatan@email');
 
 INSERT INTO medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
-VALUES ('danielito', 'yonay@gmail.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
+VALUES ('Daniel San Juan', 'daniel@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
+INSERT INTO medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
+VALUES ('Stefan Hautz', 'stefan@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
+INSERT INTO medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
+VALUES ('Yonay Cabrera', 'yonay@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
+INSERT INTO medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
+VALUES ('Jonatan Acosta', 'jonatan@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
 
 CREATE TABLE patients
 (
