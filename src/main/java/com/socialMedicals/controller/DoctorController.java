@@ -27,6 +27,7 @@ public class DoctorController {
     @RequestMapping(value = "/doctorMedicalHistory", method = POST)
     public String doctorMedicalHistory (@RequestParam(name = "email", required = false) String email, Model model){
         MedicalHistory medicalHistory = medicalHistoryRepository.findByEmail(email);
+        System.out.println("Este es el nombre: " + medicalHistory.getName());
         model.addAttribute("medicalHistory", medicalHistory);
         return "showMedicalHistory";
     }

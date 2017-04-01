@@ -38,5 +38,13 @@ public class MedicalHistoryController {
         medicalHistoryRepository.saveAndFlush(medicalHistory);
         return "redirect:/doctorMedicalHistory";
     }
+
+    @RequestMapping(value = "/showMedicalHistory", method = POST)
+    public String getPatientMedicalHistory (@RequestParam(name = "email", required = false) String email, Model model){
+        MedicalHistory medicalHistory = medicalHistoryRepository.findByEmail(email);
+        model.addAttribute("medicalHistory", medicalHistory);
+        return "showMedicalHistory";
+    }
+
 }
 

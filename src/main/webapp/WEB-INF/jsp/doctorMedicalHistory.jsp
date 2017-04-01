@@ -7,33 +7,33 @@
     <title>Historial Medico</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="Content-Type" content="application/x-www-form-urlencoded; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<h1>PACIENTES</h1>
 
+<div class="container">
+    <div class="row" id="principal">
+        <div class="col m2 offset-md-5">
 
-<%
-        for (Patient patient : (List<Patient>) request.getAttribute("patients")) {
-%>
-<form action="/doctorMedicalHistory" method="post">
-    <Button name="email" value=<%= patient.getEmail() %> type="submit"><%= patient.getName() + " " + patient.getSurname() %> </Button>
-</form>
-<%
-    }
-%>
+            <h1>PACIENTES</h1>
 
+            <%
+                for (Patient patient : (List<Patient>) request.getAttribute("patients")) {
+            %>
+            <form action="/doctorMedicalHistory" method="post">
+                <Button class="btn btn-link" name="email"
+                        value=<%= patient.getEmail() %> type="submit"><%= patient.getName() + " " + patient.getSurname() %>
+                </Button>
+            </form>
+            <%
+                }
+            %>
 
-<%--<form action="/medicalHistoryForm" method="post">
-    <input type="text" placeholder="Nombre" name="name">
-    <input type="text" placeholder="Sexo" name="sex">
-    <input type="text" placeholder="Fecha de Nacimiento" name="borndate">
-    <input type="text" placeholder="Nacionalidad" name="nationality">
-    <input type="text" placeholder="Lugar de Nacimiento" name="birthplace">
-    <input type="text" placeholder="Fecha del Informe" name="historydate">
-    <input type="text" placeholder="Hora del Informe" name="historytime">
-    <input type="text" placeholder="Doctor" name="doctor">
-    <input type="submit" value="submit">
-</form>--%>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

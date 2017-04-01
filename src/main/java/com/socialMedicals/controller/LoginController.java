@@ -52,7 +52,7 @@ public class LoginController {
             return "redirect:/doctorHome";
         } else if (patient != null && patient.getPassword().equals(password)){
             httpSession.setAttribute("emailpatient",patient.getEmail());
-            return "redirect:/homePatient";
+            return "redirect:/welcomePatient";
         }
         return "redirect:/login";
     }

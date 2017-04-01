@@ -54,7 +54,7 @@ VALUES ('Stefan', 'Hautz', 'stefan@email.com', 'admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Yonay', 'Cabrera', 'yonay@email.com','admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)
-VALUES ('Jonatan', 'Acosta', 'jonatan@email','admin', 'Perpetuo Socorro');
+VALUES ('Jonatan', 'Acosta', 'jonatan@email.com','admin', 'Perpetuo Socorro');
 
 INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
 VALUES ('Daniel San Juan', 'daniel@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
