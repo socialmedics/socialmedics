@@ -22,10 +22,7 @@ public class DoctorController {
         this.medicalHistoryRepository = medicalHistoryRepository;
     }
 
-    @RequestMapping(value = "/doctorHome", method = GET)
-    public String doctorHome (Model model){
-        return "doctorHome";
-    }
+
 
     @RequestMapping(value = "/doctorMedicalHistory", method = POST)
     public String doctorMedicalHistory (@RequestParam(name = "email", required = false) String email, Model model){

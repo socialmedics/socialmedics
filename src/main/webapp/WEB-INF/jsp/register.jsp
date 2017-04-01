@@ -47,12 +47,6 @@
                             <input class="form-control" type="password" name="password" id="password-input">
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <h4><label for="history-input" class="col-5 col-form-label"><strong>Historial Medico</strong></label></h4>
-                        <div class="col-7">
-                            <textarea class= "form-control" rows="4" cols="50" name="medicalhistory" id="history-input"></textarea>
-                        </div>
-                    </div>
                     <input type="radio" name="usuario" value="paciente" checked/><strong class="col-form-label">Paciente</strong><br/>
                     <input type="radio" name="usuario" value="medico"/><strong class="col-form-label">Medico</strong><br/>
                     <input type="submit" class="btn btn-info" value="registrar"><br/>

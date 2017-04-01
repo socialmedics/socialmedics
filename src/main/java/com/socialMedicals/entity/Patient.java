@@ -13,7 +13,6 @@ public class Patient {
     private String surname;
     private String email;
     private String center;
-    private String medicalhistory;
     private String password;
 
     public void setEmail(String email) {
@@ -24,9 +23,6 @@ public class Patient {
         this.center = center;
     }
 
-    public void setMedicalhistory(String medicalhistory) {
-        this.medicalhistory = medicalhistory;
-    }
 
     public void setPassword(String password) {
         this.password = password;
@@ -40,9 +36,6 @@ public class Patient {
         return center;
     }
 
-    public String getMedicalhistory() {
-        return medicalhistory;
-    }
 
     public String getPassword() {
         return password;

@@ -23,10 +23,9 @@ public class Home {
         this.patientRepository=patientRepository;
     }
 
-    @RequestMapping(value = "/homeMedic", method = GET)
-    public String welcomeMedic(Model model){
-        model.addAttribute("medics", medicsRepository.findAll());
-        return "welcomeDoctors";
+    @RequestMapping(value = "/doctorHome", method = GET)
+    public String doctorHome (Model model){
+        return "doctorHome";
     }
 
     @RequestMapping(value = "/homePatient", method = GET)

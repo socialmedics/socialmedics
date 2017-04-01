@@ -36,8 +36,7 @@ public class PatientController {
     public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect,
                           @RequestParam(name = "name")String name,@RequestParam(name = "surname")String surname,
                           @RequestParam(name = "email")String email,@RequestParam(name = "password")String password,
-                          @RequestParam(name = "center")String center,
-                          @RequestParam(name = "medicalhistory")String medicalhistory){
+                          @RequestParam(name = "center")String center){
 
         if(radioSelect.equals("medico")){
             Users users = getUsers(name, surname, email, password, center, "medico");
