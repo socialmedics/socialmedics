@@ -20,3 +20,6 @@ html, body {
     margin-right: auto;
     width: 100%;
 }
+.col-form-label{
+    color: green;
+}

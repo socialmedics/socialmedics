@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title></title>
+    <title>WelcomePatient</title>
 </head>
 <body>
 <h1>Welcome Patient</h1>
