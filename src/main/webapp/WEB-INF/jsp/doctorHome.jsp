@@ -7,6 +7,7 @@
 </head>
 <body>
     <h1>Bienvenido {Nombre del doctor}</h1>
-    <a href="medicalHistory">Ver historial de Pacientes</a>
+    <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
+    <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Type" content="application/x-www-form-urlencoded; charset=UTF-8"/>
 </head>
 <body>
-<h1>1. DATOS DE IDENTIFICACION DEL PACIENTE</h1>
+<h1>PACIENTES</h1>
 
 
 <%

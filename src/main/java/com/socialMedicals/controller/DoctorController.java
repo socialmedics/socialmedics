@@ -29,9 +29,18 @@ public class DoctorController {
 
     @RequestMapping(value = "/doctorMedicalHistory", method = POST)
     public String doctorMedicalHistory (@RequestParam(name = "email", required = false) String email, Model model){
-        System.out.println("Estoy aqui con mi email: " + email);
         MedicalHistory medicalHistory = medicalHistoryRepository.findByEmail(email);
         model.addAttribute("medicalHistory", medicalHistory);
         return "showMedicalHistory";
+    }
+
+    @RequestMapping(value = "/doctorFormMedicalHistory", method = GET)
+    public void doctorMedicalHistory (Model model) {
+
+    }
+
+    @RequestMapping(value = "/doctorFormMedicalHistory", method = POST)
+    public void doctorFormMedicalHistory (MedicalHistory medicalHistory) {
+        medicalHistoryRepository.saveAndFlush(medicalHistory);
     }
 }

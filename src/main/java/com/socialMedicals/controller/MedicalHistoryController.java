@@ -26,23 +26,17 @@ public class MedicalHistoryController {
         this.patientRepository = patientRepository;
     }
 
-    @RequestMapping(value = "/medicalHistory", method = GET)
+    @RequestMapping(value = "/doctorMedicalHistory", method = GET)
     public String findAllHistories(Model model){
         model.addAttribute("medicalhistory", medicalHistoryRepository.findAll());
         model.addAttribute("patients", patientRepository.findAll());
-        return "medicalHistory";
-    }
-
-    @RequestMapping(value = "/medicalHistory", method = POST)
-    public String addMedicalHistory(@RequestParam(name="selector", required = false) String selector, MedicalHistory medicalHistory){
-        System.out.println("ESTE ES MI SELECTOR " + selector);
-        return "redirect:/medicalHistory";
+        return "doctorMedicalHistory";
     }
 
     @RequestMapping(value = "/medicalHistoryForm", method = POST)
     public String postForm (MedicalHistory medicalHistory){
         medicalHistoryRepository.saveAndFlush(medicalHistory);
-        return "redirect:/medicalHistory";
+        return "redirect:/doctorMedicalHistory";
     }
 }
 
