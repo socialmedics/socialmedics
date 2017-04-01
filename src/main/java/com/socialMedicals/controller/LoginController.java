@@ -48,10 +48,10 @@ public class LoginController {
         Patient patient = patientRepository.findByEmail(email);
 
         if (medics != null && medics.getPassword().equals(password)) {
-            httpSession.setAttribute(medics.getEmail(), "done");
+            httpSession.setAttribute("emaildoctor", medics.getEmail());
             return "redirect:/doctorHome";
         } else if (patient != null && patient.getPassword().equals(password)){
-            httpSession.setAttribute(patient.getEmail() , "done");
+            httpSession.setAttribute("emailpatient",patient.getEmail());
             return "redirect:/homePatient";
         }
         return "redirect:/login";

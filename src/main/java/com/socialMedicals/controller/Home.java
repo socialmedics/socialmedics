@@ -1,11 +1,14 @@
 package com.socialMedicals.controller;
 
+import com.socialMedicals.entity.Medics;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletRequest;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -24,7 +27,11 @@ public class Home {
     }
 
     @RequestMapping(value = "/doctorHome", method = GET)
-    public String doctorHome (Model model){
+    public String doctorHome (Model model,HttpServletRequest httpServletRequest){
+        String email = (String) httpServletRequest.getSession().getAttribute("emaildoctor");
+        Medics medics = medicsRepository.findByEmail(email);
+        model.addAttribute("email",email);
+        model.addAttribute("name",medics.getName());
         return "doctorHome";
     }
 
