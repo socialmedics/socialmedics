@@ -7,37 +7,65 @@
 
     <title>RegisterDoctor</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/styleRegisterPatient.css">
 </head>
 <body>
-<div>
+<div class="container">
     <%Users users =(Users) request.getAttribute("lastUser");%>
-    <form action="/medicsRegister" method = "post">
-
-        <label>nombre: </label>
-        <input type="text" name="name" value="<%= users.getName()%>" required><br />
-        <label>apellido: </label>
-        <input type="text" name="surname" value="<%=users.getSurname()%>" required><br />
-        <label>email: </label>
-        <input type="text" name="email" value="<%=users.getEmail()%>" required><br />
-        <label>centro: </label>
-        <input type="text" name="center" value="<%=users.getCenter()%>" required><br />
-        <label>password: </label>
-        <input type="password" name="password" value="<%=users.getPassword()%>" required/><br />
-        <label>especialidad: </label>
-        <input type="text" name="especialidad" required/><br />
-        <label>identificacion: </label>
-        <input type="password" name="access" required/><br />
-        <input type="submit" value="registrar"><br />
-    </form>
-    <form action="/">
-        <input type="submit" value="inicio">
-    </form>
-    <%
-        for (Medics medics : (List<Medics>)request.getAttribute("medics")) {
-            out.println((medics.getName() + "<br>")); ;
-            out.println((medics.getEmail() + "<br>")); ;
-        }
-    %>
+    <div class="row" id="principal">
+        <div class="col m2 offset-md-5">
+            <form action="/medicsRegister" method = "post">
+                <div class="form-group row">
+                    <h4><label for="example-text-input" class="col-2 col-form-label "><strong>Nombre</strong></label></h4>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="name" value ="<%= users.getName()%> " id="example-text-input" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h4><label for="surname-input" class="col-2 col-form-label"><strong>Apellido</strong></label></h4>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="surname" value="<%=users.getSurname()%>" id="surname-input" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h4><label for="email-input" class="col-2 col-form-label"><strong>Correo</strong></label></h4>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="email" value="<%=users.getEmail()%>" id="email-input" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h4><label for="center-input" class="col-2 col-form-label"><strong>Centro</strong></label></h4>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="center" value="<%=users.getCenter()%>" id="center-input" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h4><label for="password-input" class="col-2 col-form-label"><strong>Clave</strong></label></h4>
+                    <div class="col-7">
+                        <input class="form-control" type="password" name="password" value="<%=users.getPassword()%>" id="password-input" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h4><label for="especialidad-input" class="col-2 col-form-label"><strong>Especialidad</strong></label></h4>
+                    <div class="col-7">
+                        <input class="form-control" type="text" name="especialidad" id="especialidad-input" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <h4><label for="identificacion-input" class="col-2 col-form-label"><strong>Identificacion</strong></label></h4>
+                    <div class="col-7">
+                        <input class="form-control" type="password" name="access" id="identificacion-input" required>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-info" value="registrar"><br />
+            </form>
+            <form action="/">
+                <input type="submit" class="btn btn-info" value="inicio">
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>
