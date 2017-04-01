@@ -2,15 +2,12 @@ package com.socialMedicals.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by yonay on 28/03/2017.
- */
+
 @Entity
 @Table(name = "usuarios")
 public class Users {
 
     @Id
-
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;

@@ -36,32 +36,28 @@ public class PatientController {
     public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect,
                           @RequestParam(name = "name")String name,@RequestParam(name = "surname")String surname,
                           @RequestParam(name = "email")String email,@RequestParam(name = "password")String password,
-                          @RequestParam(name = "center")String center,
-                          @RequestParam(name = "medicalhistory")String medicalhistory){
+                          @RequestParam(name = "center")String center){
 
         if(radioSelect.equals("medico")){
-            Users users = new Users();
-            users.setName(name);
-            users.setSurname(surname);
-            users.setCenter(center);
-            users.setEmail(email);
-            users.setPassword(password);
-            users.setType("medico");
+            Users users = getUsers(name, surname, email, password, center, "medico");
             usuariosRepository.saveAndFlush(users);
             return "redirect:/medicsRegister";
         }
+        Users users = getUsers(name, surname, email, password, center, "paciente");
+        usuariosRepository.saveAndFlush(users);
+        patientRepository.saveAndFlush(patient);
+        return "redirect:/";
+    }
+
+    private Users getUsers(@RequestParam(name = "name") String name, @RequestParam(name = "surname") String surname, @RequestParam(name = "email") String email, @RequestParam(name = "password") String password, @RequestParam(name = "center") String center, String type) {
         Users users = new Users();
         users.setName(name);
         users.setSurname(surname);
         users.setCenter(center);
         users.setEmail(email);
         users.setPassword(password);
-        users.setType("paciente");
-        usuariosRepository.saveAndFlush(users);
-        patientRepository.saveAndFlush(patient);
-        return "redirect:/register";
+        users.setType(type);
+        return users;
     }
-
-
 
 }

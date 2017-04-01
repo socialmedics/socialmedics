@@ -16,6 +16,15 @@ public class Medics {
     private String center;
     private String especialidad;
     private String password;
+    private String access;
+
+    public void setAccess(String access) {
+        this.access = access;
+    }
+
+    public String getAccess() {
+        return access;
+    }
 
     public void setId(int id) {
         this.id = id;

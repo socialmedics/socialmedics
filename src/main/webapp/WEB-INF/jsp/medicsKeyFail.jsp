@@ -13,38 +13,39 @@
 </head>
 <body>
 <div class="container">
-    <%Users users =(Users) request.getAttribute("lastUser");%>
+
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <form action="/medicsRegister" method = "post">
+            <h1 class="col-form-label">Fallo al registrar,rellene denuevo los campos</h1>
+            <form action="/medicsRegisterFail" method = "post">
                 <div class="form-group row">
                     <h4><label for="example-text-input" class="col-2 col-form-label "><strong>Nombre</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="name" value ="<%= users.getName()%> " id="example-text-input" required>
+                        <input class="form-control" type="text" name="name" id="example-text-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="surname-input" class="col-2 col-form-label"><strong>Apellido</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="surname" value="<%=users.getSurname()%>" id="surname-input" required>
+                        <input class="form-control" type="text" name="surname" id="surname-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="email-input" class="col-2 col-form-label"><strong>Correo</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="email" value="<%=users.getEmail()%>" id="email-input" required>
+                        <input class="form-control" type="text" name="email" id="email-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="center-input" class="col-2 col-form-label"><strong>Centro</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="center" value="<%=users.getCenter()%>" id="center-input" required>
+                        <input class="form-control" type="text" name="center" id="center-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="password-input" class="col-2 col-form-label"><strong>Clave</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="password" name="password" value="<%=users.getPassword()%>" id="password-input" required>
+                        <input class="form-control" type="password" name="password" id="password-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
