@@ -8,7 +8,13 @@
     <title>WelcomePatient</title>
 </head>
 <body>
-<h1>Welcome Patient</h1>
+<div class = "container">
+    <div class="row" id="principal">
+        <div class="col m2 offset-md-5">
+            <h1>Bienvenido <%=(String)request.getAttribute("name")%> </h1>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
