@@ -44,7 +44,7 @@ public class MedicsController {
     public String addUser(Model model, @ModelAttribute Medics medics, @RequestParam(name="access")String access) {
         if(access.equals("1234")) {
             medicsRepository.saveAndFlush(medics);
-            return "redirect:/medicsRegister";
+            return "redirect:/";
         }
         return "redirect:/medicsRegisterFail";
     }

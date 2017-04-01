@@ -8,6 +8,7 @@
     <title>WelcomePatient</title>
 </head>
 <body>
+<<<<<<< HEAD
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
@@ -20,5 +21,6 @@
         </div>
     </div>
 </div>
+
 </body>
 </html>

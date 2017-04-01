@@ -36,12 +36,12 @@ public class Home {
         return "doctorHome";
     }
 
-    @RequestMapping(value = "/welcomePatient", method = GET)
-    public String welcomePatient(Model model, HttpServletRequest httpServletRequest){
+    @RequestMapping(value = "/homePatient", method = GET)
+    public String welcomePatient(Model model,HttpServletRequest httpServletRequest){
         String email = (String) httpServletRequest.getSession().getAttribute("emailpatient");
         Patient patient = patientRepository.findByEmail(email);
-        model.addAttribute("email", email);
         model.addAttribute("name", patient.getName());
+        model.addAttribute("email", email);
         return "welcomePatient";
     }
 }
