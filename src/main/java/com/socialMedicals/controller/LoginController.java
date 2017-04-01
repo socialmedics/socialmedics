@@ -49,7 +49,7 @@ public class LoginController {
 
         if (medics != null && medics.getPassword().equals(password)) {
             httpSession.setAttribute(medics.getEmail(), "done");
-            return "redirect:/homeMedic";
+            return "redirect:/doctorHome";
         } else if (patient != null && patient.getPassword().equals(password)){
             httpSession.setAttribute(patient.getEmail() , "done");
             return "redirect:/homePatient";
