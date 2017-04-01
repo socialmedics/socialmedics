@@ -46,7 +46,7 @@ public class PatientController {
         Users users = getUsers(name, surname, email, password, center, "paciente");
         usuariosRepository.saveAndFlush(users);
         patientRepository.saveAndFlush(patient);
-        return "redirect:/register";
+        return "redirect:/";
     }
 
     private Users getUsers(@RequestParam(name = "name") String name, @RequestParam(name = "surname") String surname, @RequestParam(name = "email") String email, @RequestParam(name = "password") String password, @RequestParam(name = "center") String center, String type) {
