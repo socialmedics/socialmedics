@@ -5,9 +5,17 @@ import com.socialMedicals.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+<<<<<<< HEAD
 import org.springframework.web.bind.annotation.*;
+=======
+import org.springframework.web.bind.annotation.RequestAttribute;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+>>>>>>> feature/HistorialMedicoM
 import com.socialMedicals.entity.Patient;
 import com.socialMedicals.repository.PatientRepository;
+
+import javax.persistence.Entity;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -61,7 +69,4 @@ public class PatientController {
         patientRepository.saveAndFlush(patient);
         return "redirect:/register";
     }
-
-
-
 }
