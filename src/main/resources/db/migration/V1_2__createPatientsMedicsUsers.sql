@@ -42,9 +42,13 @@ CREATE TABLE public.medicalHistory
     borndate VARCHAR (40) NOT NULL,
     nationality VARCHAR (40) NOT NULL,
     birthplace VARCHAR (40) NOT NULL,
+    allergy VARCHAR (40) NOT NULL,
+    illness VARCHAR (40) NOT NULL,
+    diagnosis VARCHAR (40) NOT NULL,
     historydate VARCHAR (40) NOT NULL,
     historytime VARCHAR (40) NOT NULL,
-    doctor VARCHAR (40) NOT NULL
+    doctor VARCHAR (40) NOT NULL,
+    department VARCHAR (40) NOT NULL
 );
 
 INSERT INTO public.patients(name, surname, email, password, center)
@@ -56,11 +60,5 @@ VALUES ('Yonay', 'Cabrera', 'yonay@email.com','admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Jonatan', 'Acosta', 'jonatan@email.com','admin', 'Perpetuo Socorro');
 
-INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
-VALUES ('Daniel San Juan', 'daniel@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
-INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
-VALUES ('Stefan Hautz', 'stefan@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
-INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
-VALUES ('Yonay Cabrera', 'yonay@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
-INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
-VALUES ('Jonatan Acosta', 'jonatan@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
+INSERT INTO public.medicalHistory(name, email, sex, borndate, nationality, birthplace, allergy, illness, diagnosis, historydate, historytime, doctor, department)
+VALUES ('Yonay Cabrera', 'yonay@email.com', 'Hombre', '19-04-1993', 'España', 'Gran Canaria', 'Polvo', 'Estornudos', 'Reposo', '02-04-2017', '17:51', 'Daniel San', 'Cardiologo');
