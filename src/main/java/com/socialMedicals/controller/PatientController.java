@@ -28,7 +28,6 @@ public class PatientController {
 
     @RequestMapping(value = "/register", method = GET)
     public String findAllUser(Model model){
-        model.addAttribute("patients", patientRepository.findAll());
         return "register";
     }
 
