@@ -12,6 +12,13 @@
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <h1>Bienvenido <%=(String)request.getAttribute("name")%> </h1>
+            <%
+                for (Appointment appointment : (List<Appointment>) request.getAttribute("appointments")){
+             %>
+             <p> <%= appointment.getAppointmentdate(); %> </p>
+             <%
+             }
+             %>
         </div>
     </div>
 </div>

@@ -47,6 +47,15 @@ CREATE TABLE public.medicalHistory
     doctor VARCHAR (40) NOT NULL
 );
 
+CREATE TABLE public.appointment
+(
+    id SERIAL PRIMARY KEY NOT NULL,
+    email VARCHAR (40) NOT NULL,
+    appointmentdate VARCHAR (40) NOT NULL,
+    appointmenttime VARCHAR (40) NOT NULL,
+    doctor VARCHAR (40) NOT NULL
+);
+
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Daniel', 'San Juan', 'daniel@email.com', 'admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)
