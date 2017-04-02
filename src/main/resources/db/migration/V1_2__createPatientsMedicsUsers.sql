@@ -47,6 +47,15 @@ CREATE TABLE public.medicalHistory
     doctor VARCHAR (40) NOT NULL
 );
 
+CREATE TABLE public.center
+(
+    id SERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR(255) NOT NULL ,
+    address VARCHAR(255) NOT NULL ,
+    location VARCHAR(40) NOT NULL,
+    province VARCHAR(40) NOT NULL
+);
+
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Daniel', 'San Juan', 'daniel@email.com', 'admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)
@@ -64,3 +73,6 @@ INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace
 VALUES ('Yonay Cabrera', 'yonay@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
 INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
 VALUES ('Jonatan Acosta', 'jonatan@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
+
+INSERT INTO public.center(name, address, location, province)
+VALUES ('Hospital Dr. Negrín', 'Calle Pintor Felo Monzón s/n', 'Las Palmas de Gran Canaria', 'Las Palmas')
