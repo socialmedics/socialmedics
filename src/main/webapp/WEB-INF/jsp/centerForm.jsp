@@ -1,3 +1,5 @@
+<%@ page import="com.socialMedicals.entity.Center" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,7 +14,7 @@
 
     <body>
         <div class="container">
-            <div class="m-y-2 border-bottom">
+            <div class="my-5 border-bottom">
                 <h1>Centros <small>Registrar</small></h1>
             </div>
 
@@ -26,10 +28,10 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="address" class="col-sm-2 col-form-label">Dirección</label>
+                    <label for="address" class="col-sm-2 col-form-label">Direcci&oacute;n</label>
 
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" id="address" name="name" placeholder="Dirección">
+                        <input class="form-control" type="text" id="address" name="address" placeholder="Direcci&oacute;n">
                     </div>
                 </div>
 
@@ -50,13 +52,43 @@
                 </div>
 
                 <div class="form-group row">
-                    <label for="postalcode" class="col-sm-2 col-form-label">Código Postal</label>
+                    <label for="postalcode" class="col-sm-2 col-form-label">C&oacute;digo Postal</label>
 
                     <div class="col-sm-10">
-                        <input class="form-control" type="text" id="postalcode" name="postalcode" placeholder="Código Postal">
+                        <input class="form-control" type="text" id="postalcode" name="postalcode" placeholder="C&oacute;digo Postal">
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Crear</button>
+                </div>
             </form>
+
+            <div class="row my-5">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre de Cenro</th>
+                            <th>Direcci&oacute;n</th>
+                            <th>Localidad</th>
+                            <th>Provincia</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <% for (Center center: (List<Center>) request.getAttribute("centers")) { %>
+                            <tr>
+                                <td><%= center.getId() %></td>
+                                <td><%= center.getName() %></td>
+                                <td><%= center.getAddress() %></td>
+                                <td><%= center.getLocation() %></td>
+                                <td><%= center.getProvince() %></td>
+                            </tr>
+                        <% } %>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </body>
 </html>

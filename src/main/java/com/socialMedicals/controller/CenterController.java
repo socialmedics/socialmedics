@@ -32,6 +32,6 @@ public class CenterController {
     @RequestMapping(value = "/centerForm", method = POST)
     public String centerRegister (@ModelAttribute Center center) {
         centerRepository.saveAndFlush(center);
-        return "redirect:/centerRegister";
+        return "redirect:/centerForm";
     }
 }
