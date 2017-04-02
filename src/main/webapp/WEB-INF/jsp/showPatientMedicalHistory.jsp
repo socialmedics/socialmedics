@@ -1,10 +1,9 @@
-<%@ page import="com.socialMedicals.entity.Patient" %>
-<%@ page import="java.util.List" %>
 <%@ page import="com.socialMedicals.entity.MedicalHistory" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Historial Medico</title>
+    <title>Pagina Principal</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta http-equiv="Content-Type" content="application/x-www-form-urlencoded; charset=UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
@@ -13,24 +12,21 @@
 </head>
 <body>
 
-<div class="container">
+<div class = "container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-
-            <h1>PACIENTES</h1>
-
-            <%
-                for (Patient patient : (List<Patient>) request.getAttribute("patients")) {
-            %>
-            <form action="/patientMedicalHistory" method="post">
+            <% for ( MedicalHistory medicalHistory : (List<MedicalHistory>) request.getAttribute("medicalHistory") ){
+                %>
+            <form action="/doctorMedicalHistory" method="post">
+                <input type="hidden" name="date" value= <%= medicalHistory.getHistorydate() %>>
+                <input type="hidden" name="time" value= <%= medicalHistory.getHistorytime() %>>
                 <Button class="btn btn-link" name="email"
-                        value=<%= patient.getEmail() %> type="submit"><%= patient.getName() + " " + patient.getSurname() %>
+                        value=<%= medicalHistory.getEmail() %> type="submit"><%= medicalHistory.getName() + " " + medicalHistory.getHistorydate() + " " + medicalHistory.getDepartment() %>
                 </Button>
             </form>
             <%
-                }
+            }
             %>
-
         </div>
     </div>
 </div>

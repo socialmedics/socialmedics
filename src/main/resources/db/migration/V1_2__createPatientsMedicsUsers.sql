@@ -42,9 +42,13 @@ CREATE TABLE public.medicalHistory
     borndate VARCHAR (40) NOT NULL,
     nationality VARCHAR (40) NOT NULL,
     birthplace VARCHAR (40) NOT NULL,
+    allergy VARCHAR (40) NOT NULL,
+    illness VARCHAR (40) NOT NULL,
+    diagnosis VARCHAR (40) NOT NULL,
     historydate VARCHAR (40) NOT NULL,
     historytime VARCHAR (40) NOT NULL,
-    doctor VARCHAR (40) NOT NULL
+    doctor VARCHAR (40) NOT NULL,
+    department VARCHAR (40) NOT NULL
 );
 
 CREATE TABLE public.center
@@ -56,15 +60,6 @@ CREATE TABLE public.center
     province VARCHAR(40) NOT NULL
 );
 
-INSERT INTO public.patients(name, surname, email, password, center)
-VALUES ('Daniel', 'San Juan', 'daniel@email.com', 'admin', 'Perpetuo Socorro');
-INSERT INTO public.patients(name, surname, email, password, center)
-VALUES ('Stefan', 'Hautz', 'stefan@email.com', 'admin', 'Perpetuo Socorro');
-INSERT INTO public.patients(name, surname, email, password, center)
-VALUES ('Yonay', 'Cabrera', 'yonay@email.com','admin', 'Perpetuo Socorro');
-INSERT INTO public.patients(name, surname, email, password, center)
-VALUES ('Jonatan', 'Acosta', 'jonatan@email.com','admin', 'Perpetuo Socorro');
-
 INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
 VALUES ('Daniel San Juan', 'daniel@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
 INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace,historydate,historytime,doctor)
@@ -75,4 +70,5 @@ INSERT INTO public.medicalhistory(name,email,sex,borndate,nationality,birthplace
 VALUES ('Jonatan Acosta', 'jonatan@email.com','Hombre', 'Abril', 'Española', 'España', 'Hoy', 'Ahora', 'Juan Mendez');
 
 INSERT INTO public.center(name, address, location, province)
-VALUES ('Hospital Dr. Negrín', 'Calle Pintor Felo Monzón s/n', 'Las Palmas de Gran Canaria', 'Las Palmas')
+VALUES ('Hospital Dr. Negrín', 'Calle Pintor Felo Monzón s/n', 'Las Palmas de Gran Canaria', 'Las Palmas');
+

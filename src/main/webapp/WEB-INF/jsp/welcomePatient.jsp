@@ -8,14 +8,13 @@
     <title>WelcomePatient</title>
 </head>
 <body>
-<<<<<<< HEAD
+
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <h1>Bienvenido <%= (String) request.getAttribute("name") %></h1>
-            <form action="showMedicalHistory" method="post">
-                <Button class="btn btn-link" type="submit" name="email" value=<%= (String) request.getAttribute("email") %>> Ver Historial
-                    Medico
+            <form action="patientMedicalHistory" method="post">
+                <Button class="btn btn-link" type="submit" name="email" value=<%= (String) request.getAttribute("email") %>> Ver Historial Medico
                 </Button>
             </form>
         </div>
