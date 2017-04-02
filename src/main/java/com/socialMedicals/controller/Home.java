@@ -36,7 +36,7 @@ public class Home {
         return "doctorHome";
     }
 
-    @RequestMapping(value = "/homePatient", method = GET)
+    @RequestMapping(value = "/welcomePatient", method = GET)
     public String welcomePatient(Model model,HttpServletRequest httpServletRequest){
         String email = (String) httpServletRequest.getSession().getAttribute("emailpatient");
         Patient patient = patientRepository.findByEmail(email);
