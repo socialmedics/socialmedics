@@ -4,6 +4,7 @@ import com.socialMedicals.entity.MedicalHistory;
 import com.socialMedicals.entity.Patient;
 import com.socialMedicals.repository.MedicalHistoryRepository;
 import com.socialMedicals.repository.PatientRepository;
+import com.socialMedicals.services.CreateMedicalHistory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +51,7 @@ public class MedicalHistoryController {
 
     @RequestMapping(value = "/medicalHistoryForm", method = POST)
     public String postForm(MedicalHistory medicalHistory) {
-        medicalHistoryRepository.saveAndFlush(medicalHistory);
+        new CreateMedicalHistory(medicalHistoryRepository).execute(medicalHistory);
         return "redirect:/doctorMedicalHistory";
     }
 

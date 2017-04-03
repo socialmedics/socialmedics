@@ -3,6 +3,8 @@ package com.socialMedicals.controller;
 import com.socialMedicals.entity.Users;
 import com.socialMedicals.repository.CenterRepository;
 import com.socialMedicals.repository.UsuariosRepository;
+import com.socialMedicals.services.CreatePatient;
+import com.socialMedicals.services.CreateUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,12 +46,13 @@ public class PatientController {
 
         if(radioSelect.equals("medico")){
             Users users = getUsers(name, surname, email, password, center, "medico");
-            usuariosRepository.saveAndFlush(users);
+            new CreateUser(usuariosRepository).execute(users);
             return "redirect:/medicsRegister";
         }
         Users users = getUsers(name, surname, email, password, center, "paciente");
-        usuariosRepository.saveAndFlush(users);
-        patientRepository.saveAndFlush(patient);
+
+        new CreateUser(usuariosRepository).execute(users);
+        new CreatePatient(patientRepository).execute(patient);
         return "redirect:/";
     }
 

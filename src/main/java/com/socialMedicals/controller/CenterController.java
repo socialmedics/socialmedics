@@ -2,6 +2,7 @@ package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Center;
 import com.socialMedicals.repository.CenterRepository;
+import com.socialMedicals.services.CreateCenter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +32,7 @@ public class CenterController {
 
     @RequestMapping(value = "/centerForm", method = POST)
     public String centerRegister (@ModelAttribute Center center) {
-        centerRepository.saveAndFlush(center);
+        new CreateCenter(centerRepository).execute(center);
         return "redirect:/centerForm";
     }
 }

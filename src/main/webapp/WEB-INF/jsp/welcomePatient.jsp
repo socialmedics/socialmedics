@@ -17,6 +17,9 @@
                 <Button class="btn btn-link" type="submit" name="email" value=<%= (String) request.getAttribute("email") %>> Ver Historial Medico
                 </Button>
             </form>
+            <form action="modifyPatient">
+                <input type="submit" class="btn btn-info" value = "modificarPerfil"><br/>
+            </form>
         </div>
     </div>
 </div>
