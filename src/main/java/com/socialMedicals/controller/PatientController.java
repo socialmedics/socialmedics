@@ -42,11 +42,11 @@ public class PatientController {
 
         if(radioSelect.equals("medico")){
             Users users = getUsers(name, surname, email, password, center, "medico");
-            usuariosRepository.saveAndFlush(users);
+            new CreateUser(usuariosRepository).execute(users);
             return "redirect:/medicsRegister";
         }
         Users users = getUsers(name, surname, email, password, center, "paciente");
-        
+
         new CreateUser(usuariosRepository).execute(users);
         new CreatePatient(patientRepository).execute(patient);
         return "redirect:/";
