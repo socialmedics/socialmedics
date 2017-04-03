@@ -11,7 +11,7 @@
 </head>
 <body>
 <div class="container">
-    <%Medics medic =(Medics) request.getAttribute("lastUser");%>
+    <%Medics medic =(Medics) request.getAttribute("doctor");%>
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <form action="/modifyDoctor" method = "post">
@@ -59,8 +59,8 @@
                 </div>
                 <input type="submit" class="btn btn-info" value="registrar"><br />
             </form>
-            <form action="/">
-                <input type="submit" class="btn btn-info" value="inicio">
+            <form action="/doctorHome">
+                <input type="submit" class="btn btn-info" value="cancelar">
             </form>
         </div>
     </div>
