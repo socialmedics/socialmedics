@@ -52,7 +52,6 @@ public class MedicalHistoryController {
     @RequestMapping(value = "/medicalHistoryForm", method = POST)
     public String postForm(MedicalHistory medicalHistory) {
         new CreateMedicalHistory(medicalHistoryRepository).execute(medicalHistory);
-        medicalHistoryRepository.saveAndFlush(medicalHistory);
         return "redirect:/doctorMedicalHistory";
     }
 
