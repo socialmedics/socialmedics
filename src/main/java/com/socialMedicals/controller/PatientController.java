@@ -1,6 +1,7 @@
 package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Users;
+import com.socialMedicals.repository.CenterRepository;
 import com.socialMedicals.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,17 +19,20 @@ public class PatientController {
 
     private final PatientRepository patientRepository;
     private final UsuariosRepository usuariosRepository;
+    private final CenterRepository centersRepository;
 
 
     @Autowired
-    public PatientController(PatientRepository patientRepository, UsuariosRepository usuariosRepository) {
+    public PatientController(PatientRepository patientRepository, UsuariosRepository usuariosRepository, CenterRepository centersRepository) {
         this.patientRepository = patientRepository;
         this.usuariosRepository = usuariosRepository;
+        this.centersRepository = centersRepository;
     }
 
     @RequestMapping(value = "/register", method = GET)
     public String findAllUser(Model model){
         model.addAttribute("patients", patientRepository.findAll());
+        model.addAttribute("centers", centersRepository.findAll());
         return "register";
     }
 
