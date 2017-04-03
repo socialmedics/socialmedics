@@ -37,7 +37,7 @@ public class MedicsController {
     public String findAllUser(Model model) {
         List<Users> users = new ArrayList<>();
         users = usuariosRepository.findAll();
-        Users lastuser = users.get(1);
+        Users lastuser = users.get(users.size() - 1);
         model.addAttribute("lastUser",lastuser);
         model.addAttribute("medics",medicsRepository.findAll());
         model.addAttribute("centers", centersRepository.findAll());
