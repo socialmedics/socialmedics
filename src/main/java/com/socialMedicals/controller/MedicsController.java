@@ -4,6 +4,7 @@ import com.socialMedicals.entity.Medics;
 import com.socialMedicals.entity.Users;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.UsuariosRepository;
+import com.socialMedicals.services.CreateDoctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,7 +44,7 @@ public class MedicsController {
     @RequestMapping(value = "/medicsRegister", method = POST)
     public String addUser(Model model, @ModelAttribute Medics medics, @RequestParam(name="access")String access) {
         if(access.equals("1234")) {
-            medicsRepository.saveAndFlush(medics);
+            new CreateDoctor(medicsRepository).execute(medics);
             return "redirect:/";
         }
         return "redirect:/medicsRegisterFail";
