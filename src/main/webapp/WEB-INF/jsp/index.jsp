@@ -15,6 +15,9 @@
             <form action="/register">
                 <input type="submit" class="btn btn-info" value = "registrar"><br/>
             </form>
+            <form action="/centerForm">
+                <input type="submit" class="btn btn-info" value = "RegistrarCentro"><br/>
+            </form>
             <form action="/login">
                 <input type="submit" class="btn btn-info" value = "login"><br/>
             </form>

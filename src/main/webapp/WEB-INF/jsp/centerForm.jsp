@@ -62,6 +62,10 @@
                 <div class="form-group">
                     <button class="btn btn-primary" type="submit">Crear</button>
                 </div>
+
+            </form>
+            <form action="/">
+                <input type="submit" class="btn btn-info" value="inicio">
             </form>
 
             <div class="row my-5">
