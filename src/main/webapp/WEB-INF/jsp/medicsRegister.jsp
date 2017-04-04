@@ -1,7 +1,6 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.socialMedicals.entity.User" %>
-<%@ page import="com.socialMedicals.entity.Medics" %>
 <%@ page import="com.socialMedicals.entity.Center" %>
+<%@ page import="com.socialMedicals.entity.User" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>

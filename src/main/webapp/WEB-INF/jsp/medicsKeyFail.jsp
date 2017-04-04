@@ -1,6 +1,3 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.socialMedicals.entity.User" %>
-<%@ page import="com.socialMedicals.entity.Medics" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,9 +14,10 @@
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <h1 class="col-form-label">Fallo al registrar,rellene denuevo los campos</h1>
-            <form action="/medicsRegisterFail" method = "post">
+            <form action="/medicsRegisterFail" method="post">
                 <div class="form-group row">
-                    <h4><label for="example-text-input" class="col-2 col-form-label "><strong>Nombre</strong></label></h4>
+                    <h4><label for="example-text-input" class="col-2 col-form-label "><strong>Nombre</strong></label>
+                    </h4>
                     <div class="col-7">
                         <input class="form-control" type="text" name="name" id="example-text-input" required>
                     </div>
@@ -49,18 +47,20 @@
                     </div>
                 </div>
                 <div class="form-group row">
-                    <h4><label for="especialidad-input" class="col-2 col-form-label"><strong>Especialidad</strong></label></h4>
+                    <h4><label for="especialidad-input"
+                               class="col-2 col-form-label"><strong>Especialidad</strong></label></h4>
                     <div class="col-7">
                         <input class="form-control" type="text" name="especialidad" id="especialidad-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <h4><label for="identificacion-input" class="col-2 col-form-label"><strong>Identificacion</strong></label></h4>
+                    <h4><label for="identificacion-input"
+                               class="col-2 col-form-label"><strong>Identificacion</strong></label></h4>
                     <div class="col-7">
                         <input class="form-control" type="password" name="access" id="identificacion-input" required>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-info" value="registrar"><br />
+                <input type="submit" class="btn btn-info" value="registrar"><br/>
             </form>
             <form action="/">
                 <input type="submit" class="btn btn-info" value="inicio">

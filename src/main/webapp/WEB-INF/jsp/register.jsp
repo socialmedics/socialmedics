@@ -1,6 +1,5 @@
-<%@ page import="com.socialMedicals.entity.Patient" %>
-<%@ page import="java.util.List" %>
 <%@ page import="com.socialMedicals.entity.Center" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,13 +18,15 @@
             <div>
                 <form action="/register" method="post">
                     <div class="form-group row">
-                        <h4><label for="example-text-input" class="col-2 col-form-label "><strong>Nombre</strong></label></h4>
+                        <h4><label for="example-text-input"
+                                   class="col-2 col-form-label "><strong>Nombre</strong></label></h4>
                         <div class="col-7">
                             <input class="form-control" type="text" name="name" id="example-text-input" required>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <h4><label for="surname-input" class="col-2 col-form-label"><strong>Apellido</strong></label></h4>
+                        <h4><label for="surname-input" class="col-2 col-form-label"><strong>Apellido</strong></label>
+                        </h4>
                         <div class="col-7">
                             <input class="form-control" type="text" name="surname" id="surname-input" required>
                         </div>

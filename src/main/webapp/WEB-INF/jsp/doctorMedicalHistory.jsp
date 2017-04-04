@@ -1,6 +1,5 @@
 <%@ page import="com.socialMedicals.entity.Patient" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.socialMedicals.entity.MedicalHistory" %>
 <!DOCTYPE html>
 <html>
 <head>

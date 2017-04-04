@@ -1,5 +1,5 @@
-<%@ page import="com.socialMedicals.entity.Medics" %>
 <%@ page import="com.socialMedicals.entity.Center" %>
+<%@ page import="com.socialMedicals.entity.Medics" %>
 <%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
@@ -42,8 +42,9 @@
                             <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
                             <%if(center.getName().equals(medic.getCenter())) { %>
                             <option value="<%= center.getName() %>" selected><%= center.getName() %></option>
-                            <% } %>
+                            <% }else{ %>
                             <option value="<%= center.getName() %>"><%= center.getName() %></option>
+                            <% } %>
                             <% } %>
                         </select>
                     </div>
