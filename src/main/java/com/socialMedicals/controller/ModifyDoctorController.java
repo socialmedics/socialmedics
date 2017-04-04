@@ -38,11 +38,15 @@ public class ModifyDoctorController {
     }
 
     @RequestMapping(value = "/modifyDoctor", method = POST)
-    public String modifyDoctorPOST(HttpServletRequest httpServletRequest, @ModelAttribute Medics medics) {
+    public String modifyDoctorPOST(Model model,HttpServletRequest httpServletRequest, @ModelAttribute Medics medics) {
         String email = (String)httpServletRequest.getSession().getAttribute("emaildoctor");
         Medics medics1 = medicsRepository.findByEmail(email);
-        medics1.setCenter(medics.getCenter());
+        medics1.update(medics);
+
         new UpdateDoctor(medicsRepository).execute(medics1);
-        return "redirect:/modifyDoctor";
+        model.addAttribute("email",medics1.getEmail());
+        model.addAttribute("name",medics1.getName());
+
+        return "redirect:/doctorHome";
     }
 }

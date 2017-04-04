@@ -30,7 +30,7 @@
                 <div class="form-group row">
                     <h4><label for="email-input" class="col-2 col-form-label"><strong>Correo</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="email" value="<%=medic.getEmail()%>" id="email-input" required>
+                        <input class="form-control" type="text" name="email" value="<%=medic.getEmail()%>" id="email-input" readonly="readonly" >
                     </div>
                 </div>
                 <div class="form-group row">
@@ -54,7 +54,7 @@
                 <div class="form-group row">
                     <h4><label for="identificacion-input" class="col-2 col-form-label"><strong>Identificacion</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="password" name="access" value="<%=medic.getAccess()%>" id="identificacion-input" required>
+                        <input class="form-control" type="password" name="access" value="<%=medic.getAccess()%>" id="identificacion-input" readonly="readonly">
                     </div>
                 </div>
                 <input type="submit" class="btn btn-info" value="registrar"><br />

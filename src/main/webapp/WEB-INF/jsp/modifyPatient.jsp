@@ -30,7 +30,7 @@
                 <div class="form-group row">
                     <h4><label for="email-input" class="col-2 col-form-label"><strong>Correo</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="email" value="<%=patient.getEmail()%>" id="email-input" required>
+                        <input class="form-control" type="text" name="email" value="<%=patient.getEmail()%>" id="email-input" readonly="readonly">
                     </div>
                 </div>
                 <div class="form-group row">

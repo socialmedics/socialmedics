@@ -37,11 +37,13 @@ public class ModifyPatientController {
     }
 
     @RequestMapping(value = "/modifyPatient", method = POST)
-    public String getPatientMedicalHistory(HttpServletRequest httpServletRequest, @ModelAttribute Patient patient) {
+    public String getPatientMedicalHistory(Model model, HttpServletRequest httpServletRequest, @ModelAttribute Patient patient) {
         String email = (String)httpServletRequest.getSession().getAttribute("emailpatient");
         Patient patient1 = patientRepository.findByEmail(email);
-        patient1.setCenter(patient.getCenter());
+        patient1.update(patient);
         new UpdatePatient(patientRepository).execute(patient1);
-        return "redirect:/modifyPatient";
+        model.addAttribute("name",patient1.getName());
+        model.addAttribute("email",patient1.getEmail());
+        return "redirect:/welcomePatient";
     }
 }
