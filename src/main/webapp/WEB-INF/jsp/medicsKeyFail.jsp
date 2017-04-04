@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.socialMedicals.entity.Users" %>
+<%@ page import="com.socialMedicals.entity.User" %>
 <%@ page import="com.socialMedicals.entity.Medics" %>
 <!DOCTYPE html>
 <html>

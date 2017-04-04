@@ -1,7 +1,7 @@
 package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Medics;
-import com.socialMedicals.entity.Users;
+import com.socialMedicals.entity.User;
 import com.socialMedicals.repository.CenterRepository;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.UsuariosRepository;
@@ -36,9 +36,9 @@ public class MedicsController {
 
     @RequestMapping(value = "/medicsRegister", method = GET)
     public String findAllUser(Model model) {
-        List<Users> users = new ArrayList<>();
+        List<User> users = new ArrayList<>();
         users = usuariosRepository.findAll();
-        Users lastuser = users.get(users.size() - 1);
+        User lastuser = users.get(users.size() - 1);
         model.addAttribute("lastUser",lastuser);
         model.addAttribute("medics",medicsRepository.findAll());
         model.addAttribute("centers", centersRepository.findAll());

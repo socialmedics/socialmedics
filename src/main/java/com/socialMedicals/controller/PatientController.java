@@ -1,6 +1,6 @@
 package com.socialMedicals.controller;
 
-import com.socialMedicals.entity.Users;
+import com.socialMedicals.entity.User;
 import com.socialMedicals.repository.CenterRepository;
 import com.socialMedicals.repository.UsuariosRepository;
 import com.socialMedicals.services.CreatePatient;
@@ -39,32 +39,21 @@ public class PatientController {
     }
 
     @RequestMapping(value = "/register", method = POST)
-    public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect,
-                          @RequestParam(name = "name")String name,@RequestParam(name = "surname")String surname,
-                          @RequestParam(name = "email")String email,@RequestParam(name = "password")String password,
-                          @RequestParam(name = "center")String center){
+    public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect){
 
+            User user = new User();
         if(radioSelect.equals("medico")){
-            Users users = getUsers(name, surname, email, password, center, "medico");
-            new CreateUser(usuariosRepository).execute(users);
+
+            user.update(patient,"medico");
+            new CreateUser(usuariosRepository).execute(user);
             return "redirect:/medicsRegister";
         }
-        Users users = getUsers(name, surname, email, password, center, "paciente");
-
-        new CreateUser(usuariosRepository).execute(users);
+        user.update(patient,"patient");
+        new CreateUser(usuariosRepository).execute(user);
         new CreatePatient(patientRepository).execute(patient);
         return "redirect:/";
     }
 
-    private Users getUsers(@RequestParam(name = "name") String name, @RequestParam(name = "surname") String surname, @RequestParam(name = "email") String email, @RequestParam(name = "password") String password, @RequestParam(name = "center") String center, String type) {
-        Users users = new Users();
-        users.setName(name);
-        users.setSurname(surname);
-        users.setCenter(center);
-        users.setEmail(email);
-        users.setPassword(password);
-        users.setType(type);
-        return users;
-    }
+
 
 }

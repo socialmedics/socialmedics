@@ -2,7 +2,6 @@ package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Medics;
 import com.socialMedicals.entity.Patient;
-import com.socialMedicals.entity.Users;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
 import com.socialMedicals.repository.UsuariosRepository;

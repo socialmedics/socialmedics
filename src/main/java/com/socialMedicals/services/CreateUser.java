@@ -1,6 +1,6 @@
 package com.socialMedicals.services;
 
-import com.socialMedicals.entity.Users;
+import com.socialMedicals.entity.User;
 import com.socialMedicals.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -16,7 +16,7 @@ public class CreateUser {
         this.usuariosRepository = usuariosRepository;
     }
 
-    public void execute(Users users) {
-        usuariosRepository.saveAndFlush(users);
+    public void execute(User user) {
+        usuariosRepository.saveAndFlush(user);
     }
 }

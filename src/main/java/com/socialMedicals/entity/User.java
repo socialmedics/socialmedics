@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "usuarios")
-public class Users {
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -73,5 +73,14 @@ public class Users {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public void update(Patient patient, String type) {
+        this.setEmail(patient.getEmail());
+        this.setType(type);
+        this.setCenter(patient.getCenter());
+        this.setSurname(patient.getSurname());
+        this.setName(patient.getName());
+        this.setPassword(patient.getPassword());
     }
 }
