@@ -1,11 +1,9 @@
 package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Medics;
-import com.socialMedicals.entity.Patient;
+import com.socialMedicals.repository.CenterRepository;
 import com.socialMedicals.repository.MedicsRepository;
-import com.socialMedicals.repository.PatientRepository;
 import com.socialMedicals.services.UpdateDoctor;
-import com.socialMedicals.services.UpdatePatient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,10 +20,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
  */
 @Controller
 public class ModifyDoctorController {
+    private final CenterRepository centerRepository;
     private final MedicsRepository medicsRepository;
 
     @Autowired
-    public ModifyDoctorController(MedicsRepository medicsRepository){
+    public ModifyDoctorController(CenterRepository centerRepository, MedicsRepository medicsRepository){
+        this.centerRepository = centerRepository;
         this.medicsRepository=medicsRepository;
     }
 
@@ -34,6 +34,7 @@ public class ModifyDoctorController {
         String email = (String)httpServletRequest.getSession().getAttribute("emaildoctor");
         Medics medics = medicsRepository.findByEmail(email);
         model.addAttribute("doctor", medics);
+        model.addAttribute("centers",centerRepository.findAll());
         return "modifyDoctor";
     }
 

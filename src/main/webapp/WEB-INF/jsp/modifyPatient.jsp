@@ -1,4 +1,6 @@
 <%@ page import="com.socialMedicals.entity.Patient" %>
+<%@ page import="com.socialMedicals.entity.Center" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +38,14 @@
                 <div class="form-group row">
                     <h4><label for="center-input" class="col-2 col-form-label"><strong>Centro</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="center" value="<%=patient.getCenter()%>" id="center-input" required>
+                        <select name="center" id="center-input" class="form-control">
+                            <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
+                            <%if(center.getName().equals(patient.getCenter())) { %>
+                            <option value="<%= center.getName() %>" selected><%= center.getName() %></option>
+                            <% } %>
+                            <option value="<%= center.getName() %>"><%= center.getName() %></option>
+                            <% } %>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
