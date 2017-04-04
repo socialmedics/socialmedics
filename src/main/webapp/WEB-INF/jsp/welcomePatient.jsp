@@ -20,6 +20,7 @@
             <form action="modifyPatient">
                 <input type="submit" class="btn btn-info" value = "modificarPerfil"><br/>
             </form>
+            <a href="/pedirCita" class="btn btn-primary">Pedir Cita</a>
         </div>
     </div>
 </div>
