@@ -2,6 +2,7 @@ package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Medics;
 import com.socialMedicals.repository.MedicsRepository;
+import com.socialMedicals.services.CreateDoctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +32,7 @@ public class MedicsKeyFailController {
     @RequestMapping(value = "/medicsRegisterFail" , method = POST)
     public String keyOk(@ModelAttribute Medics medics, @RequestParam(name ="access") String access) {
         if(access.equals("1234")){
-            medicsRepository.saveAndFlush(medics);
+            new CreateDoctor(medicsRepository).execute(medics);
             return "redirect:/";
         }
         return "redirect:/medicsKeyFail";

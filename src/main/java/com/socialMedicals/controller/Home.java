@@ -28,7 +28,7 @@ public class Home {
     }
 
     @RequestMapping(value = "/doctorHome", method = GET)
-    public String doctorHome (Model model,HttpServletRequest httpServletRequest){
+    public String doctorHome (Model model, HttpServletRequest httpServletRequest){
         String email = (String) httpServletRequest.getSession().getAttribute("emaildoctor");
         Medics medics = medicsRepository.findByEmail(email);
         model.addAttribute("email",email);
@@ -36,7 +36,7 @@ public class Home {
         return "doctorHome";
     }
 
-    @RequestMapping(value = "/homePatient", method = GET)
+    @RequestMapping(value = "/welcomePatient", method = GET)
     public String welcomePatient(Model model,HttpServletRequest httpServletRequest){
         String email = (String) httpServletRequest.getSession().getAttribute("emailpatient");
         Patient patient = patientRepository.findByEmail(email);

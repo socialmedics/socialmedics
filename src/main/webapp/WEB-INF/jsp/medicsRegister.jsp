@@ -1,6 +1,7 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.socialMedicals.entity.Users" %>
+<%@ page import="com.socialMedicals.entity.User" %>
 <%@ page import="com.socialMedicals.entity.Medics" %>
+<%@ page import="com.socialMedicals.entity.Center" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,38 +14,42 @@
 </head>
 <body>
 <div class="container">
-    <%Users users =(Users) request.getAttribute("lastUser");%>
+    <%User user =(User) request.getAttribute("lastUser");%>
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <form action="/medicsRegister" method = "post">
                 <div class="form-group row">
                     <h4><label for="example-text-input" class="col-2 col-form-label "><strong>Nombre</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="name" value ="<%= users.getName()%> " id="example-text-input" required>
+                        <input class="form-control" type="text" name="name" value ="<%= user.getName()%> " id="example-text-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="surname-input" class="col-2 col-form-label"><strong>Apellido</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="surname" value="<%=users.getSurname()%>" id="surname-input" required>
+                        <input class="form-control" type="text" name="surname" value="<%=user.getSurname()%>" id="surname-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="email-input" class="col-2 col-form-label"><strong>Correo</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="email" value="<%=users.getEmail()%>" id="email-input" required>
+                        <input class="form-control" type="email" name="email" value="<%=user.getEmail()%>" id="email-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="center-input" class="col-2 col-form-label"><strong>Centro</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="center" value="<%=users.getCenter()%>" id="center-input" required>
+                        <select name="center" id="center-input" class="form-control">
+                            <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
+                                <option value="<%= center.getName() %>"><%= center.getName() %></option>
+                            <% } %>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="password-input" class="col-2 col-form-label"><strong>Clave</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="password" name="password" value="<%=users.getPassword()%>" id="password-input" required>
+                        <input class="form-control" type="password" name="password" value="<%=user.getPassword()%>" id="password-input" required>
                     </div>
                 </div>
                 <div class="form-group row">

@@ -1,6 +1,6 @@
-<%@ page import="java.util.List" %>
-<%@ page import="com.socialMedicals.entity.User" %>
 <%@ page import="com.socialMedicals.entity.Medics" %>
+<%@ page import="com.socialMedicals.entity.Center" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,57 +13,63 @@
 </head>
 <body>
 <div class="container">
-
+    <%Medics medic =(Medics) request.getAttribute("doctor");%>
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <h1 class="col-form-label">Fallo al registrar,rellene denuevo los campos</h1>
-            <form action="/medicsRegisterFail" method = "post">
+            <form action="/modifyDoctor" method = "post">
                 <div class="form-group row">
                     <h4><label for="example-text-input" class="col-2 col-form-label "><strong>Nombre</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="name" id="example-text-input" required>
+                        <input class="form-control" type="text" name="name" value ="<%= medic.getName()%> " id="example-text-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="surname-input" class="col-2 col-form-label"><strong>Apellido</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="surname" id="surname-input" required>
+                        <input class="form-control" type="text" name="surname" value="<%=medic.getSurname()%>" id="surname-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="email-input" class="col-2 col-form-label"><strong>Correo</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="email" id="email-input" required>
+                        <input class="form-control" type="text" name="email" value="<%=medic.getEmail()%>" id="email-input" readonly="readonly" >
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="center-input" class="col-2 col-form-label"><strong>Centro</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="center" id="center-input" required>
+                        <select name="center" id="center-input" class="form-control">
+                            <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
+                            <%if(center.getName().equals(medic.getCenter())) { %>
+                            <option value="<%= center.getName() %>" selected><%= center.getName() %></option>
+                            <% } %>
+                            <option value="<%= center.getName() %>"><%= center.getName() %></option>
+                            <% } %>
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="password-input" class="col-2 col-form-label"><strong>Clave</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="password" name="password" id="password-input" required>
+                        <input class="form-control" type="password" name="password" value="<%=medic.getPassword()%>" id="password-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="especialidad-input" class="col-2 col-form-label"><strong>Especialidad</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="text" name="especialidad" id="especialidad-input" required>
+                        <input class="form-control" type="text" name="especialidad" value="<%=medic.getEspecialidad()%>" id="especialidad-input" required>
                     </div>
                 </div>
                 <div class="form-group row">
                     <h4><label for="identificacion-input" class="col-2 col-form-label"><strong>Identificacion</strong></label></h4>
                     <div class="col-7">
-                        <input class="form-control" type="password" name="access" id="identificacion-input" required>
+                        <input class="form-control" type="password" name="access" value="<%=medic.getAccess()%>" id="identificacion-input" readonly="readonly">
                     </div>
                 </div>
                 <input type="submit" class="btn btn-info" value="registrar"><br />
             </form>
-            <form action="/">
-                <input type="submit" class="btn btn-info" value="inicio">
+            <form action="/doctorHome">
+                <input type="submit" class="btn btn-info" value="cancelar">
             </form>
         </div>
     </div>

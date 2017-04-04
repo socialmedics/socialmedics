@@ -1,5 +1,6 @@
 <%@ page import="com.socialMedicals.entity.Patient" %>
 <%@ page import="java.util.List" %>
+<%@ page import="com.socialMedicals.entity.Center" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,13 +33,17 @@
                     <div class="form-group row">
                         <h4><label for="email-input" class="col-2 col-form-label"><strong>Correo</strong></label></h4>
                         <div class="col-7">
-                            <input class="form-control" type="text" name="email" id="email-input">
+                            <input class="form-control" type="email" name="email" id="email-input">
                         </div>
                     </div>
                     <div class="form-group row">
                         <h4><label for="center-input" class="col-2 col-form-label"><strong>Centro</strong></label></h4>
                         <div class="col-7">
-                            <input class="form-control" type="text" name="center" id="center-input">
+                            <select name="center" id="center-input" class="form-control">
+                                <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
+                                <option value="<%= center.getName() %>"><%= center.getName() %></option>
+                                <% } %>
+                            </select>
                         </div>
                     </div>
                     <div class="form-group row">

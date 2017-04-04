@@ -75,4 +75,13 @@ public class Patient {
                 ", surname='" + surname + '\'' +
                 '}';
     }
+
+    public void update(Patient patient) {
+
+        this.setName(patient.getName());
+        this.setSurname(patient.getSurname());
+        this.setCenter(patient.getCenter());
+        this.setEmail(patient.getEmail());
+        this.setPassword(patient.getPassword());
+    }
 }

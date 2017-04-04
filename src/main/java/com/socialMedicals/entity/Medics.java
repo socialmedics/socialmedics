@@ -81,4 +81,15 @@ public class Medics {
     public String getPassword() {
         return password;
     }
+
+    public void update(Medics medics){
+
+        this.setName(medics.getName());
+        this.setSurname(medics.getSurname());
+        this.setCenter(medics.getCenter());
+        this.setEmail(medics.getEmail());
+        this.setPassword(medics.getPassword());
+        this.setEspecialidad(medics.getEspecialidad());
+        this.setAccess(medics.getAccess());
+    }
 }

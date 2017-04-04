@@ -1,7 +1,10 @@
 package com.socialMedicals.controller;
 
-import com.socialMedicals.entity.Users;
+import com.socialMedicals.entity.User;
+import com.socialMedicals.repository.CenterRepository;
 import com.socialMedicals.repository.UsuariosRepository;
+import com.socialMedicals.services.CreatePatient;
+import com.socialMedicals.services.CreateUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,46 +21,39 @@ public class PatientController {
 
     private final PatientRepository patientRepository;
     private final UsuariosRepository usuariosRepository;
+    private final CenterRepository centersRepository;
 
 
     @Autowired
-    public PatientController(PatientRepository patientRepository, UsuariosRepository usuariosRepository) {
+    public PatientController(PatientRepository patientRepository, UsuariosRepository usuariosRepository, CenterRepository centersRepository) {
         this.patientRepository = patientRepository;
         this.usuariosRepository = usuariosRepository;
+        this.centersRepository = centersRepository;
     }
 
     @RequestMapping(value = "/register", method = GET)
     public String findAllUser(Model model){
         model.addAttribute("patients", patientRepository.findAll());
+        model.addAttribute("centers", centersRepository.findAll());
         return "register";
     }
 
     @RequestMapping(value = "/register", method = POST)
-    public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect,
-                          @RequestParam(name = "name")String name,@RequestParam(name = "surname")String surname,
-                          @RequestParam(name = "email")String email,@RequestParam(name = "password")String password,
-                          @RequestParam(name = "center")String center){
+    public String addUser(Model model,@ModelAttribute Patient patient, @RequestParam(name="usuario")String radioSelect){
 
+            User user = new User();
         if(radioSelect.equals("medico")){
-            Users users = getUsers(name, surname, email, password, center, "medico");
-            usuariosRepository.saveAndFlush(users);
+
+            user.update(patient,"medico");
+            new CreateUser(usuariosRepository).execute(user);
             return "redirect:/medicsRegister";
         }
-        Users users = getUsers(name, surname, email, password, center, "paciente");
-        usuariosRepository.saveAndFlush(users);
-        patientRepository.saveAndFlush(patient);
+        user.update(patient,"patient");
+        new CreateUser(usuariosRepository).execute(user);
+        new CreatePatient(patientRepository).execute(patient);
         return "redirect:/";
     }
 
-    private Users getUsers(@RequestParam(name = "name") String name, @RequestParam(name = "surname") String surname, @RequestParam(name = "email") String email, @RequestParam(name = "password") String password, @RequestParam(name = "center") String center, String type) {
-        Users users = new Users();
-        users.setName(name);
-        users.setSurname(surname);
-        users.setCenter(center);
-        users.setEmail(email);
-        users.setPassword(password);
-        users.setType(type);
-        return users;
-    }
+
 
 }

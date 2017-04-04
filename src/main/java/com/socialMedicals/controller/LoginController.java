@@ -2,7 +2,6 @@ package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Medics;
 import com.socialMedicals.entity.Patient;
-import com.socialMedicals.entity.Users;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
 import com.socialMedicals.repository.UsuariosRepository;
@@ -52,7 +51,7 @@ public class LoginController {
             return "redirect:/doctorHome";
         } else if (patient != null && patient.getPassword().equals(password)){
             httpSession.setAttribute("emailpatient",patient.getEmail());
-            return "redirect:/homePatient";
+            return "redirect:/welcomePatient";
         }
         return "redirect:/login";
     }
