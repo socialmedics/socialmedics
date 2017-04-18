@@ -2,14 +2,11 @@ package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.Medics;
 import com.socialMedicals.entity.Patient;
-import com.socialMedicals.entity.User;
 import com.socialMedicals.repository.CenterRepository;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
-import com.socialMedicals.repository.UsuariosRepository;
 import com.socialMedicals.services.CreateDoctor;
 import com.socialMedicals.services.CreatePatient;
-import com.socialMedicals.services.CreateUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

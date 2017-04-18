@@ -4,7 +4,6 @@ import com.socialMedicals.entity.Medics;
 import com.socialMedicals.entity.Patient;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
-import com.socialMedicals.repository.UsuariosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,15 +21,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class LoginController {
 
     private final PatientRepository patientRepository;
-    private final UsuariosRepository usuariosRepository;
     private final MedicsRepository medicsRepository;
 
 
     @Autowired
-    public LoginController(PatientRepository patientRepository, UsuariosRepository usuariosRepository,
+    public LoginController(PatientRepository patientRepository,
                            MedicsRepository medicsRepository) {
         this.patientRepository = patientRepository;
-        this.usuariosRepository = usuariosRepository;
         this.medicsRepository = medicsRepository;
     }
 
