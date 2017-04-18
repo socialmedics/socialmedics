@@ -19,7 +19,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 
 @Controller
-public class PatientController {
+public class RegisterPatientController {
 
     private final PatientRepository patientRepository;
     private final UsuariosRepository usuariosRepository;
@@ -27,7 +27,7 @@ public class PatientController {
 
 
     @Autowired
-    public PatientController(PatientRepository patientRepository, UsuariosRepository usuariosRepository, CenterRepository centersRepository) {
+    public RegisterPatientController(PatientRepository patientRepository, UsuariosRepository usuariosRepository, CenterRepository centersRepository) {
         this.patientRepository = patientRepository;
         this.usuariosRepository = usuariosRepository;
         this.centersRepository = centersRepository;
