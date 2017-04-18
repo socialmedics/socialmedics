@@ -23,7 +23,7 @@
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <form action="/pedirCita">
+            <form action="/pedirCita" method="post">
                 <div class="form-group row" id="sandbox-container">
                     <input type="text" class="form-control" name="requestdate" id="requestdate">
                 </div>
@@ -35,7 +35,7 @@
                         </option>
                         <% } %>
                     </select>
-                    <select name="center" id="doctor-input" class="form-control" disabled>
+                    <select name="doctor" id="doctor-input" class="form-control" disabled>
                         <option value="">-- Seleccionar medico --</option>
                     </select>
                 </div>

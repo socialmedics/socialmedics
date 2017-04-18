@@ -29,19 +29,17 @@ public class HomePatientAndDoctorController {
 
     @RequestMapping(value = "/doctorHome", method = GET)
     public String doctorHome (Model model, HttpServletRequest httpServletRequest){
-        String email = (String) httpServletRequest.getSession().getAttribute("emaildoctor");
-        Medics medics = medicsRepository.findByEmail(email);
-        model.addAttribute("email",email);
+        Medics medics = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
+        model.addAttribute("email",medics.getEmail());
         model.addAttribute("name",medics.getName());
         return "doctorHome";
     }
 
     @RequestMapping(value = "/welcomePatient", method = GET)
     public String welcomePatient(Model model,HttpServletRequest httpServletRequest){
-        String email = (String) httpServletRequest.getSession().getAttribute("emailpatient");
-        Patient patient = patientRepository.findByEmail(email);
+        Patient patient = (Patient) httpServletRequest.getSession().getAttribute("emailpatient");
         model.addAttribute("name", patient.getName());
-        model.addAttribute("email", email);
+        model.addAttribute("email", patient.getEmail());
         return "welcomePatient";
     }
 }
