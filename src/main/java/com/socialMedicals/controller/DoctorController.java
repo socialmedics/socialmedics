@@ -2,7 +2,9 @@ package com.socialMedicals.controller;
 
 
 import com.socialMedicals.entity.MedicalHistory;
+import com.socialMedicals.entity.Medics;
 import com.socialMedicals.repository.MedicalHistoryRepository;
+import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
 import com.socialMedicals.services.CreateMedicalHistory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -20,10 +23,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class DoctorController {
 
     private final MedicalHistoryRepository medicalHistoryRepository;
+    private final MedicsRepository medicsRepository;
 
     @Autowired
-    public DoctorController(MedicalHistoryRepository medicalHistoryRepository, PatientRepository patientRepository) {
+    public DoctorController(MedicalHistoryRepository medicalHistoryRepository, PatientRepository patientRepository, MedicsRepository medicsRepository) {
         this.medicalHistoryRepository = medicalHistoryRepository;
+        this.medicsRepository = medicsRepository;
     }
 
 
@@ -51,5 +56,10 @@ public class DoctorController {
     public void doctorFormMedicalHistory (MedicalHistory medicalHistory) {
         System.out.println(medicalHistory.getName());
         new CreateMedicalHistory(medicalHistoryRepository).execute(medicalHistory);
+    }
+
+    @RequestMapping(value = "/doctorsByCenter", method = GET, produces = "application/json")
+    public @ResponseBody List<Medics> doctorsByCenter (@RequestParam(name = "center") String center) {
+        return medicsRepository.findByCenter(center);
     }
 }
