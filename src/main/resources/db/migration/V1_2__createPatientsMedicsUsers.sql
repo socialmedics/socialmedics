@@ -60,6 +60,15 @@ CREATE TABLE public.center
     province VARCHAR(40) NOT NULL
 );
 
+CREATE TABLE public.dates
+(
+    id SERIAL PRIMARY KEY NOT NULL,
+    doctor VARCHAR(255) NOT NULL ,
+    patient VARCHAR(255) NOT NULL ,
+    day VARCHAR(40) NOT NULL,
+    center VARCHAR(40) NOT NULL
+);
+
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Daniel', 'San Juan', 'daniel@email.com', 'admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)
