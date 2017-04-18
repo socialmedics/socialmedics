@@ -11,12 +11,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
-public class RequestDate {
+public class RequestDateController {
 
     private final CenterRepository centerRepository;
     private final MedicsRepository medicsRepository;
     @Autowired
-    public RequestDate(CenterRepository centerRepository, MedicsRepository medicsRepository) {
+    public RequestDateController(CenterRepository centerRepository, MedicsRepository medicsRepository) {
         this.centerRepository = centerRepository;
         this.medicsRepository = medicsRepository;
     }

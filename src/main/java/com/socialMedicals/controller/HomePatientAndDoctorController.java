@@ -16,13 +16,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
 
 @Controller
-public class Home {
+public class HomePatientAndDoctorController {
 
     private final MedicsRepository medicsRepository;
     private final PatientRepository patientRepository;
 
     @Autowired
-    public Home(MedicsRepository medicsRepository,PatientRepository patientRepository){
+    public HomePatientAndDoctorController(MedicsRepository medicsRepository, PatientRepository patientRepository){
         this.medicsRepository=medicsRepository;
         this.patientRepository=patientRepository;
     }
