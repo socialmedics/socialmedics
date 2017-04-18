@@ -48,8 +48,8 @@ public class DoctorController {
     }
 
     @RequestMapping(value = "/doctorFormMedicalHistory", method = GET)
-    public void doctorMedicalHistory (Model model) {
-
+    public String doctorMedicalHistory (Model model) {
+        return "doctorFormMedicalHistory";
     }
 
     @RequestMapping(value = "/doctorFormMedicalHistory", method = POST)

@@ -32,15 +32,12 @@ public class MedicalHistoryController {
 
     @RequestMapping(value = "/doctorMedicalHistory", method = GET)
     public String findAllHistories(Model model) {
-        List<Patient> patientList = patientRepository.findAll();
-        List<MedicalHistory> medicalHistories = medicalHistoryRepository.findAll();
         List<Patient> patients = new ArrayList<>();
-        for (Patient aPatientList : patientList) {
-            for (MedicalHistory aMedicalHistoryList : medicalHistories) {
+        for (Patient aPatientList : patientRepository.findAll()) {
+            for (MedicalHistory aMedicalHistoryList : medicalHistoryRepository.findAll()) {
                 if ((aMedicalHistoryList.getEmail().equals(aPatientList.getEmail()))) {
-                    if (!patients.contains(aPatientList)) {
-                        patients.add(aPatientList);
-                    }
+                    patients.add(aPatientList);
+                    break;
                 }
             }
         }
