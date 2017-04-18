@@ -43,10 +43,10 @@ public class RegisterPatientController {
     public String addUser(Model model, @ModelAttribute Patient patient, @ModelAttribute Medics medics, @RequestParam(name = "usuario") String radioSelect) {
 
         if (radioSelect.equals("medico")){
-            new CreatePatient(patientRepository).execute(patient);
+            new CreateDoctor(medicsRepository).execute(medics);
             return "redirect:/";
         }
-        new CreateDoctor(medicsRepository).execute(medics);
+        new CreatePatient(patientRepository).execute(patient);
         return "redirect:/register";
     }
 

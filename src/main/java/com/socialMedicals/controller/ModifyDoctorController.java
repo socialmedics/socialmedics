@@ -29,8 +29,7 @@ public class ModifyDoctorController {
 
     @RequestMapping(value = "/modifyDoctor" , method = GET)
     public String modifyDoctor(Model model, HttpServletRequest httpServletRequest) {
-        String email = (String)httpServletRequest.getSession().getAttribute("emaildoctor");
-        Medics medics = medicsRepository.findByEmail(email);
+        Medics medics = (Medics)httpServletRequest.getSession().getAttribute("emaildoctor");
         model.addAttribute("doctor", medics);
         model.addAttribute("centers",centerRepository.findAll());
         return "modifyDoctor";
@@ -38,8 +37,7 @@ public class ModifyDoctorController {
 
     @RequestMapping(value = "/modifyDoctor", method = POST)
     public String modifyDoctorPOST(Model model,HttpServletRequest httpServletRequest, @ModelAttribute Medics medics) {
-        String email = (String)httpServletRequest.getSession().getAttribute("emaildoctor");
-        Medics medics1 = medicsRepository.findByEmail(email);
+        Medics medics1 = (Medics)httpServletRequest.getSession().getAttribute("emaildoctor");
         medics1.update(medics);
 
         new UpdateDoctor(medicsRepository).execute(medics1);

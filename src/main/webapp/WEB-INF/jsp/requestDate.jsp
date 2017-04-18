@@ -23,37 +23,42 @@
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <form action="/pedirCita">
-                <div class="form-group" id="sandbox-container">
+            <form action="/pedirCita" method="post">
+                <div class="form-group row" id="sandbox-container">
                     <input type="text" class="form-control" name="requestdate" id="requestdate">
+                </div>
+                <div class="form-group row">
+                    <select name="center" id="center-input" class="form-control">
+                        <option value="">-- Seleccionar centro --</option>
+                        <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
+                        <option value="<%= center.getName() %>"><%= center.getName() %>
+                        </option>
+                        <% } %>
+                    </select>
+                    <select name="doctor" id="doctor-input" class="form-control" disabled>
+                        <option value="">-- Seleccionar medico --</option>
+                    </select>
+                </div>
+                <div class="form-group row">
+                    <input type="submit" class="btn btn-info" value="Pedir Cita">
                 </div>
             </form>
         </div>
-        <div class="col-7">
-            <select name="center" id="center-input" class="form-control">
-                <option value="">-- Seleccionar centro --</option>
-                <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
-                <option value="<%= center.getName() %>"><%= center.getName() %></option>
-                <% } %>
-            </select>
-            <select name="center" id="doctor-input" class="form-control" disabled>
-                <option value="">-- Seleccionar medico --</option>
-            </select>
-        </div>
+
     </div>
 </div>
 <script>
     $('#sandbox-container input').datepicker({});
 </script>
 <script>
-    var Select2Cascade = ( function(window, $) {
+    var Select2Cascade = (function (window, $) {
 
         function Select2Cascade(parent, child, url, select2Options) {
             var afterActions = [];
             var options = select2Options || {};
 
             // Register functions to be called after cascading data loading done
-            this.then = function(callback) {
+            this.then = function (callback) {
                 afterActions.push(callback);
                 return this;
             };
@@ -63,10 +68,10 @@
                 child.prop("disabled", true);
                 var _this = this;
 
-                $.getJSON(url.replace(':parentId:', $(this).val()), function(items) {
+                $.getJSON(url.replace(':parentId:', $(this).val()), function (items) {
                     var newOptions = '<option value="">-- Seleccionar medico --</option>';
-                    for(var id in items) {
-                        newOptions += '<option value="'+ items[id].id +'">'+ items[id].name +'</option>';
+                    for (var id in items) {
+                        newOptions += '<option value="' + items[id].id + '">' + items[id].name + '</option>';
                     }
 
                     child.select2('destroy').html(newOptions).prop("disabled", false)
@@ -81,10 +86,10 @@
 
         return Select2Cascade;
 
-    })( window, $);
+    })(window, $);
     $('#center-input').select2();
     $('#doctor-input').select2();
-    var options = { width: 'resolve' };
+    var options = {width: 'resolve'};
     new Select2Cascade($('#center-input'), $('#doctor-input'), '/doctorsByCenter?center=:parentId:', options);
 </script>
 </body>
