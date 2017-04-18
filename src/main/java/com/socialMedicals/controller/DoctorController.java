@@ -54,7 +54,6 @@ public class DoctorController {
 
     @RequestMapping(value = "/doctorFormMedicalHistory", method = POST)
     public void doctorFormMedicalHistory (MedicalHistory medicalHistory) {
-        System.out.println(medicalHistory.getName());
         new CreateMedicalHistory(medicalHistoryRepository).execute(medicalHistory);
     }
 

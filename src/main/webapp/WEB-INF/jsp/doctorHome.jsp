@@ -15,7 +15,7 @@
             <h1>Bienvenido <%=(String)request.getAttribute("name")%> </h1>
             <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
             <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
-            <form action="modifyDoctor">
+            <form action="/modifyDoctor">
                 <input type="submit" class="btn btn-info" value="modificarPerfil">
             </form>
         </div>
