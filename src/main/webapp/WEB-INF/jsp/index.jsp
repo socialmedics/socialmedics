@@ -1,3 +1,4 @@
+<%@ taglib prefix="img" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/isotope.css">
 
 </head>
     <body>
@@ -18,5 +18,6 @@
             <a href="/centerForm">Anadir un centro</a>
             <a href="/login" id="login">Iniciar sesion</a>
         </div>
+    <img:url value=""
     </body>
 </html>
