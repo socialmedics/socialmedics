@@ -18,6 +18,9 @@
             <form action="/modifyDoctor">
                 <input type="submit" class="btn btn-info" value="modificarPerfil">
             </form>
+            <form action="/viewAppointment">
+                <input type="submit" class="btn btn-info" value="viewAppointment">
+            </form>
         </div>
     </div>
 </div>

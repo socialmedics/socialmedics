@@ -7,8 +7,8 @@
     <title>SocialMedics</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
 
@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -26,6 +27,9 @@
             <form action="/pedirCita" method="post">
                 <div class="form-group row" id="sandbox-container">
                     <input type="text" class="form-control" name="requestdate" id="requestdate">
+                </div>
+                <div class="form-group row" id="hour-container">
+                    <input type="text" class="form-control" name="hour">
                 </div>
                 <div class="form-group row">
                     <select name="center" id="center-input" class="form-control">
@@ -38,11 +42,7 @@
                     <select name="doctor" id="doctor-input" class="form-control" disabled>
                         <option value="">-- Seleccionar medico --</option>
                     </select>
-                    <select id="fecha" name = "hour">
-                        <option value="8" selected="selected">8:00</option>
-                        <option value="9">9:00</option>
-                        <option value="10">10:00</option>
-                    </select>
+
                 </div>
                 <div class="form-group row">
                     <input type="submit" class="btn btn-info" value="Pedir Cita">
@@ -54,6 +54,9 @@
 </div>
 <script>
     $('#sandbox-container input').datepicker({});
+</script>
+<script>
+    $('#hour-container input').timepicker({});
 </script>
 <script>
     var Select2Cascade = (function (window, $) {
