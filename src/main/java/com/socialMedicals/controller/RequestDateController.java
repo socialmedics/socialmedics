@@ -43,12 +43,14 @@ public class RequestDateController {
     public String requestDatePost(@RequestParam(name = "center") String center,
                                   @RequestParam(name = "doctor")String doctor,
                                   @RequestParam(name = "requestdate") String requestdate,
+                                  @RequestParam(name = "hour") String hour,
                                   HttpServletRequest httpServletRequest){
         Patient patient = (Patient) httpServletRequest.getSession().getAttribute("emailpatient");
         Date date = new Date();
         date.setCenter(center);
         date.setDay(requestdate);
         date.setDoctor(doctor);
+        date.setHour(hour);
         date.setPatient(patient.getEmail());
         new CreateDate(dateRepository).execute(date);
 

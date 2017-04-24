@@ -13,6 +13,17 @@ public class Date {
     private String day;
     private String center;
 
+    public String getHour() {
+        return hour;
+    }
+
+    public void setHour(String hour) {
+        this.hour = hour;
+    }
+
+    private String hour;
+
+
     public int getId() {
         return id;
     }

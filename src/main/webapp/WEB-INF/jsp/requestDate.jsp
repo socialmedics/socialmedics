@@ -38,6 +38,11 @@
                     <select name="doctor" id="doctor-input" class="form-control" disabled>
                         <option value="">-- Seleccionar medico --</option>
                     </select>
+                    <select id="fecha" name = "hour">
+                        <option value="8" selected="selected">8:00</option>
+                        <option value="9">9:00</option>
+                        <option value="10">10:00</option>
+                    </select>
                 </div>
                 <div class="form-group row">
                     <input type="submit" class="btn btn-info" value="Pedir Cita">

@@ -66,7 +66,8 @@ CREATE TABLE public.dates
     doctor VARCHAR(255) NOT NULL ,
     patient VARCHAR(255) NOT NULL ,
     day VARCHAR(40) NOT NULL,
-    center VARCHAR(40) NOT NULL
+    center VARCHAR(40) NOT NULL,
+    hour VARCHAR(40) NOT NULL
 );
 
 INSERT INTO public.patients(name, surname, email, password, center)
