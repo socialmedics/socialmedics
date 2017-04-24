@@ -79,7 +79,7 @@
                 $.getJSON(url.replace(':parentId:', $(this).val()), function (items) {
                     var newOptions = '<option value="">-- Seleccionar medico --</option>';
                     for (var id in items) {
-                        newOptions += '<option value="' + items[id].id + '">' + items[id].name + '</option>';
+                        newOptions += '<option value="' + items[id].name + '">' + items[id].name + '</option>';
                     }
 
                     child.select2('destroy').html(newOptions).prop("disabled", false)

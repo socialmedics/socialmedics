@@ -9,9 +9,11 @@ public class Date {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String doctor;
-    private String patient;
+    private String patientemail;
+    private String patientname;
     private String day;
     private String center;
+    private String hour;
 
     public String getHour() {
         return hour;
@@ -21,15 +23,27 @@ public class Date {
         this.hour = hour;
     }
 
-    private String hour;
-
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+    public String getPatientemail() {
+        return patientemail;
+    }
+
+    public void setPatientemail(String patientemail) {
+        this.patientemail = patientemail;
+    }
+
+    public String getPatientname() {
+        return patientname;
+    }
+
+    public void setPatientname(String patientname) {
+        this.patientname = patientname;
     }
 
     public String getDoctor() {
@@ -40,13 +54,6 @@ public class Date {
         this.doctor = doctor;
     }
 
-    public String getPatient() {
-        return patient;
-    }
-
-    public void setPatient(String patient) {
-        this.patient = patient;
-    }
 
     public String getDay() {
         return day;

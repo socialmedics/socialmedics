@@ -64,12 +64,14 @@ CREATE TABLE public.dates
 (
     id SERIAL PRIMARY KEY NOT NULL,
     doctor VARCHAR(255) NOT NULL ,
-    patient VARCHAR(255) NOT NULL ,
+    patientemail VARCHAR(255) NOT NULL ,
+    patientname VARCHAR(255) NOT NULL ,
     day VARCHAR(40) NOT NULL,
     center VARCHAR(40) NOT NULL,
     hour VARCHAR(40) NOT NULL
 );
-
+INSERT INTO public.medicos(name, surname, email, password, center, access, especialidad)
+VALUES ('Daniel', 'San Juan', 'stef@gmail.com', '1234', 'Hospital Dr. Negrín','1234','cirujano');
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Daniel', 'San Juan', 'daniel@email.com', 'admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)
