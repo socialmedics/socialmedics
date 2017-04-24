@@ -7,8 +7,8 @@ html, body {
             url("https://i.ytimg.com/vi/PRVlIFQN1rI/maxresdefault.jpg");
 }
 .container {
-    display: table-cell;
     vertical-align: middle;
+    margin-top: 20px;
 }
 
 .btn-info{
