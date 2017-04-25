@@ -26,10 +26,14 @@
                     <th><%= date.getHour() %>
                     </th>
                     <th>
-                        <input type="submit" name="accept" value="accept">
+                        <form action="/acceptAppointment" method="POST">
+                            <input type="submit" name="accept" value="accept">
+                        </form>
                     </th>
                     <th>
-                        <input type="submit" name="reject" value="reject">
+                        <form action="/rejectAppointment">
+                            <input type="submit" name="reject" value="reject">
+                        </form>
                     </th>
                 </tr>
                 <% } %>

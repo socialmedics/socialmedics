@@ -48,7 +48,7 @@ public class RequestDateController {
         date.setPatientname(patient.getName());
         date.setAccepted(false);
         new CreateDate(dateRepository).execute(date);
-
+        
         return "redirect:/welcomePatient";
     }
 }
