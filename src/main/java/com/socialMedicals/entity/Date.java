@@ -8,6 +8,9 @@ public class Date {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private Boolean accepted;
+
+
     private String doctor;
     private String patientemail;
     private String patientname;
@@ -15,6 +18,13 @@ public class Date {
     private String center;
     private String hour;
 
+    public Boolean getAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(Boolean accepted) {
+        this.accepted = accepted;
+    }
     public String getHour() {
         return hour;
     }

@@ -26,7 +26,7 @@
         <div class="col m2 offset-md-5">
             <form action="/pedirCita" method="post">
                 <div class="form-group row" id="sandbox-container">
-                    <input type="text" class="form-control" name="requestdate" id="requestdate">
+                    <input type="text" class="form-control" name="day" id="requestdate">
                 </div>
                 <div class="form-group row" id="hour-container">
                     <input type="text" class="form-control" name="hour">

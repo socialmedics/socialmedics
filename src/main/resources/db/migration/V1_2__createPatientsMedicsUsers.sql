@@ -67,6 +67,7 @@ CREATE TABLE public.dates
     patientemail VARCHAR(255) NOT NULL ,
     patientname VARCHAR(255) NOT NULL ,
     day VARCHAR(40) NOT NULL,
+    accepted BOOLEAN NOT NULL,
     center VARCHAR(40) NOT NULL,
     hour VARCHAR(40) NOT NULL
 );

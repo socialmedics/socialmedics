@@ -9,6 +9,7 @@ import com.socialMedicals.services.CreateDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -39,19 +40,13 @@ public class RequestDateController {
     }
 
     @RequestMapping(value = "/pedirCita", method = POST)
-    public String requestDatePost(@RequestParam(name = "center") String center,
-                                  @RequestParam(name = "doctor")String doctor,
-                                  @RequestParam(name = "requestdate") String requestdate,
-                                  @RequestParam(name = "hour") String hour,
+    public String requestDatePost(@ModelAttribute Date date,
                                   HttpServletRequest httpServletRequest){
+
         Patient patient = (Patient) httpServletRequest.getSession().getAttribute("emailpatient");
-        Date date = new Date();
-        date.setCenter(center);
-        date.setDay(requestdate);
-        date.setDoctor(doctor);
-        date.setHour(hour);
         date.setPatientemail(patient.getEmail());
         date.setPatientname(patient.getName());
+        date.setAccepted(false);
         new CreateDate(dateRepository).execute(date);
 
         return "redirect:/welcomePatient";
