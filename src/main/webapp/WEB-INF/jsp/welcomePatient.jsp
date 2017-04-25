@@ -18,9 +18,10 @@
                 </Button>
             </form>
             <form action="/modifyPatient">
-                <input type="submit" class="btn btn-info" value = "modificarPerfil"><br/>
+                <input type="submit" class="btn btn-link" value = "modificarPerfil"><br/>
             </form>
-            <a href="/pedirCita" class="btn btn-primary">Pedir Cita</a>
+            <a href="/pedirCita" class="btn btn-link">Pedir Cita</a>
+            <a href="/prescriptionPatientView" class="btn btn-link">Ver Recetas</a>
         </div>
     </div>
 </div>
