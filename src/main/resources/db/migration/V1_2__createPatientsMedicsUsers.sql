@@ -69,6 +69,20 @@ CREATE TABLE public.dates
     center VARCHAR(40) NOT NULL
 );
 
+CREATE TABLE public.prescription
+(
+  id SERIAL PRIMARY KEY NOT NULL,
+  name VARCHAR (40) NOT NULL,
+  email VARCHAR (40) NOT NULL,
+  sex VARCHAR (40) NOT NULL,
+  historydate VARCHAR (40) NOT NULL,
+  historytime VARCHAR (40) NOT NULL,
+  doctor VARCHAR (40) NOT NULL,
+  department VARCHAR (40) NOT NULL,
+  illness VARCHAR (40) NOT NULL,
+  medicament VARCHAR (255) NOT NULL
+);
+
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Daniel', 'San Juan', 'daniel@email.com', 'admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)

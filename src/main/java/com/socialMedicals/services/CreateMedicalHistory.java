@@ -4,9 +4,6 @@ import com.socialMedicals.entity.MedicalHistory;
 import com.socialMedicals.repository.MedicalHistoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
-/**
- * Created by yonay on 03/04/2017.
- */
 public class CreateMedicalHistory {
     private final MedicalHistoryRepository medicalHistoryRepository;
 

@@ -3,10 +3,13 @@ package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.MedicalHistory;
 import com.socialMedicals.entity.Medics;
+import com.socialMedicals.entity.Prescription;
 import com.socialMedicals.repository.MedicalHistoryRepository;
 import com.socialMedicals.repository.MedicsRepository;
 import com.socialMedicals.repository.PatientRepository;
+import com.socialMedicals.repository.PrescriptionRepository;
 import com.socialMedicals.services.CreateMedicalHistory;
+import com.socialMedicals.services.CreatePrescription;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,11 +27,13 @@ public class DoctorController {
 
     private final MedicalHistoryRepository medicalHistoryRepository;
     private final MedicsRepository medicsRepository;
+    private final PrescriptionRepository prescriptionRepository;
 
     @Autowired
-    public DoctorController(MedicalHistoryRepository medicalHistoryRepository, PatientRepository patientRepository, MedicsRepository medicsRepository) {
+    public DoctorController(MedicalHistoryRepository medicalHistoryRepository, PatientRepository patientRepository, MedicsRepository medicsRepository, PrescriptionRepository prescriptionRepository) {
         this.medicalHistoryRepository = medicalHistoryRepository;
         this.medicsRepository = medicsRepository;
+        this.prescriptionRepository = prescriptionRepository;
     }
 
 
@@ -60,5 +65,16 @@ public class DoctorController {
     @RequestMapping(value = "/doctorsByCenter", method = GET, produces = "application/json")
     public @ResponseBody List<Medics> doctorsByCenter (@RequestParam(name = "center") String center) {
         return medicsRepository.findByCenter(center);
+    }
+
+    @RequestMapping(value = "/prescriptionForm", method = GET)
+    public String doctorPrescription (Model model) {
+        return "prescriptionForm";
+    }
+
+    @RequestMapping(value = "/prescriptionForm", method = POST)
+    public String doctorPrescriptionForm (Prescription prescription) {
+        new CreatePrescription(prescriptionRepository).execute(prescription);
+        return "redirect:/doctorHome";
     }
 }

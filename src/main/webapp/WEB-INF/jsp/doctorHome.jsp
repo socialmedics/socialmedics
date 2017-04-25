@@ -12,12 +12,12 @@
 <div class = "container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <h1>Bienvenido <%=(String)request.getAttribute("name")%> </h1>
             <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
             <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
             <form action="/modifyDoctor">
-                <input type="submit" class="btn btn-info" value="modificarPerfil">
+                <input type="submit" class="btn btn-link" value="modificarPerfil">
             </form>
+            <a href="prescriptionForm">Redactar Recetas</a>
         </div>
     </div>
 </div>
