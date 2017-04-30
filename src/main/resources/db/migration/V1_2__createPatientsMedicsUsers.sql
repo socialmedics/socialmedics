@@ -83,6 +83,15 @@ CREATE TABLE public.prescription
   medicament VARCHAR (255) NOT NULL
 );
 
+CREATE TABLE public.timetables
+(
+    id SERIAL PRIMARY KEY NOT NULL,
+    medic_id INT REFERENCES public.medicos NOT NULL,
+    weekday VARCHAR(16) NOT NULL,
+    time_start TIME NOT NULL,
+    time_end TIME NOT NULL
+);
+
 INSERT INTO public.patients(name, surname, email, password, center)
 VALUES ('Daniel', 'San Juan', 'daniel@email.com', 'admin', 'Perpetuo Socorro');
 INSERT INTO public.patients(name, surname, email, password, center)

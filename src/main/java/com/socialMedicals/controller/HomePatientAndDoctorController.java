@@ -32,6 +32,7 @@ public class HomePatientAndDoctorController {
         Medics medics = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
         model.addAttribute("email",medics.getEmail());
         model.addAttribute("name",medics.getName());
+        model.addAttribute("id", medics.getId());
         return "doctorHome";
     }
 
