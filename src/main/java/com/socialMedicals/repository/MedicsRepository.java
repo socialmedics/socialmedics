@@ -13,4 +13,5 @@ public interface MedicsRepository extends JpaRepository<Medics,Integer> {
 
     List<Medics> findByCenter(String center);
 
+    Medics findById(int medicId);
 }

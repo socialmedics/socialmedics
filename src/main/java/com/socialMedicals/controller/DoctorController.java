@@ -39,7 +39,9 @@ public class DoctorController {
 
 
     @RequestMapping(value = "/doctorMedicalHistory", method = POST)
-    public String doctorMedicalHistory (@RequestParam(name = "date", required = false) String historyDate, @RequestParam(name = "time", required = false) String historyTime, Model model){
+    public String doctorMedicalHistory (@RequestParam(name = "date", required = false) String historyDate,
+                                        @RequestParam(name = "time", required = false) String historyTime,
+                                        Model model){
         MedicalHistory medicalHistory = medicalHistoryRepository.findHistoryByHistorydateAndHistorytime(historyDate, historyTime);
         model.addAttribute("medicalHistory", medicalHistory);
         return "showMedicalHistory";
