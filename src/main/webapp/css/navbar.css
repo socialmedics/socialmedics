@@ -31,3 +31,41 @@
 body,header,footer{
     background-color: whitesmoke;
 }
+
+/* Banner */
+
+#banner {
+    background-image: url(../img/dark_tint.png), url(../img/fondo3.jpg);
+    background-position: center center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 14em 0em 14em;
+    text-align: center;
+}
+
+#banner :last-child {
+    margin-bottom: 0;
+}
+
+#banner h2 {
+    color: #ffffff;
+    font-size: 4em;
+    line-height: 1.25em;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+
+#banner p {
+    font-size: 1.5em;
+    margin-bottom: 1.75em;
+    color: black;
+}
+
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
+
+}
+
+
+

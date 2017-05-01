@@ -3,8 +3,6 @@ html, body {
     width: 100% !important;
     display: table;
     position: absolute;
-    background-image:
-            url("https://i.ytimg.com/vi/PRVlIFQN1rI/maxresdefault.jpg");
 }
 .container {
     vertical-align: middle;
