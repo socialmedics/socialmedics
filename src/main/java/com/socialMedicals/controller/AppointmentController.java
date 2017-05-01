@@ -59,8 +59,8 @@ public class AppointmentController {
             Date date1 = dateRepository.findById(date.getId());
             System.out.println(date1);
             dateRepository.delete(date.getId());
+            return "redirect:/doctorHome";
         }
-        return "redirect:/doctorHome";
-
+        return "redirect:/changeDoctor";
     }
 }

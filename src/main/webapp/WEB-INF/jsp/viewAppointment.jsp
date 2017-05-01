@@ -24,6 +24,7 @@
                 <input type="text" name="hour" value=<%= date.getHour() %>>
                 <input type="text" name="center" value=<%= date.getCenter() %>>
                 <input type="submit" name="accept" value="accept">
+                <input type="submit" name="accept" value="reasignar">
                 <input type="submit" name="accept" value="reject"><br>
             </form>
             <% } %>

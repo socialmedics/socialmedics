@@ -74,6 +74,20 @@ public class Medics {
         return surname;
     }
 
+    @Override
+    public String toString() {
+        return "Medics{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", center='" + center + '\'' +
+                ", especialidad='" + especialidad + '\'' +
+                ", password='" + password + '\'' +
+                ", access='" + access + '\'' +
+                '}';
+    }
+
     public String getEspecialidad() {
         return especialidad;
     }
