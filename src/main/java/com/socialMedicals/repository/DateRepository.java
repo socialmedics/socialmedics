@@ -10,4 +10,7 @@ import java.util.List;
 @Repository
 public interface DateRepository extends JpaRepository<Date, Integer> {
     List<Date> findByDoctor(String doctor);
+
+    Date findById(int id);
+    void delete(int id);
 }
