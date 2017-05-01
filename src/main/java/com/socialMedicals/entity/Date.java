@@ -8,10 +8,32 @@ public class Date {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private Boolean accepted;
+
+
     private String doctor;
-    private String patient;
+    private String patientemail;
+    private String patientname;
+
+
     private String day;
     private String center;
+    private String hour;
+
+    public Boolean getAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(Boolean accepted) {
+        this.accepted = accepted;
+    }
+    public String getHour() {
+        return hour;
+    }
+
+    public void setHour(String hour) {
+        this.hour = hour;
+    }
 
     public int getId() {
         return id;
@@ -19,6 +41,34 @@ public class Date {
 
     public void setId(int id) {
         this.id = id;
+    }
+    @Override
+    public String toString() {
+        return "Date{" +
+                "id=" + id +
+                ", accepted=" + accepted +
+                ", doctor='" + doctor + '\'' +
+                ", patientemail='" + patientemail + '\'' +
+                ", patientname='" + patientname + '\'' +
+                ", day='" + day + '\'' +
+                ", center='" + center + '\'' +
+                ", hour='" + hour + '\'' +
+                '}';
+    }
+    public String getPatientemail() {
+        return patientemail;
+    }
+
+    public void setPatientemail(String patientemail) {
+        this.patientemail = patientemail;
+    }
+
+    public String getPatientname() {
+        return patientname;
+    }
+
+    public void setPatientname(String patientname) {
+        this.patientname = patientname;
     }
 
     public String getDoctor() {
@@ -29,13 +79,6 @@ public class Date {
         this.doctor = doctor;
     }
 
-    public String getPatient() {
-        return patient;
-    }
-
-    public void setPatient(String patient) {
-        this.patient = patient;
-    }
 
     public String getDay() {
         return day;

@@ -1,12 +1,13 @@
 package com.socialMedicals.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
 @Table(name = "medicos")
 public class Medics {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -74,6 +75,20 @@ public class Medics {
         return surname;
     }
 
+    @Override
+    public String toString() {
+        return "Medics{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", center='" + center + '\'' +
+                ", especialidad='" + especialidad + '\'' +
+                ", password='" + password + '\'' +
+                ", access='" + access + '\'' +
+                '}';
+    }
+
     public String getEspecialidad() {
         return especialidad;
     }
@@ -92,4 +107,7 @@ public class Medics {
         this.setEspecialidad(medics.getEspecialidad());
         this.setAccess(medics.getAccess());
     }
+
+
+
 }

@@ -19,6 +19,9 @@
                 <input type="submit" class="btn btn-link" value="modificarPerfil">
             </form>
             <a href="prescriptionForm">Redactar Recetas</a>
+            <form action="/viewAppointment">
+                <input type="submit" class="btn btn-info" value="viewAppointment">
+            </form>
         </div>
     </div>
 </div>
