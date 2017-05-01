@@ -1,12 +1,13 @@
 package com.socialMedicals.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
 @Table(name = "medicos")
 public class Medics {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -106,4 +107,7 @@ public class Medics {
         this.setEspecialidad(medics.getEspecialidad());
         this.setAccess(medics.getAccess());
     }
+
+
+
 }

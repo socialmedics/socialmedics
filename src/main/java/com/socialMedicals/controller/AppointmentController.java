@@ -61,6 +61,7 @@ public class AppointmentController {
             dateRepository.delete(date.getId());
             return "redirect:/doctorHome";
         }
+
         return "redirect:/changeDoctor";
     }
 }

@@ -15,15 +15,19 @@
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <h2>Citas</h2>
-            <select name="center" id="center-input" class="form-control">
-                <% for (Medics medics : (List<Medics>) request.getAttribute("medics")) { %>
-                <%if(medics.getCenter().equals(String.valueOf(request.getAttribute("center")))) { %>
-                <option value="<%= medics.getName() %>" selected><%= medics.getName() %></option>
-                <% } %>
-                <% } %>
-            </select>
+            <form action="/changeDoctor" method="post">
+                <select name="medics" id="medics-input" class="form-control">
+                    <% for (Medics medics : (List<Medics>) request.getAttribute("medics")) { %>
+                    <%if (medics.getCenter().equals(String.valueOf(request.getAttribute("center")))) { %>
+                    <option value="<%= medics.getName() %>" selected><%= medics.getName() %>
+                    </option>
+                    <% } %>
+                    <% } %>
+                </select>
+                <input type="submit" class="btn btn-info" value="Change">
+            </form>
             <form action="/doctorHome">
-                <input type="submit" class="btn btn-info" value = "Home">
+                <input type="submit" class="btn btn-info" value="Home">
             </form>
         </div>
     </div>
