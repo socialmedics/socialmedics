@@ -14,33 +14,21 @@
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <table>
-                <% for (Date date : (List<Date>) request.getAttribute("appointments")) { %>
-                <tr>
-                    <th><%= date.getPatientname() %>
-                    </th>
-                    <th><%= date.getPatientemail() %>
-                    </th>
-                    <th><%= date.getDay() %>
-                    </th>
-                    <th><%= date.getHour() %>
-                    </th>
-                    <th>
-                        <form action="/acceptAppointment" method="POST">
-                            <input type="submit" name="accept" value="accept">
-                        </form>
-                    </th>
-                    <th>
-                        <form action="/rejectAppointment">
-                            <input type="submit" name="reject" value="reject">
-                        </form>
-                    </th>
-                </tr>
-                <% } %>
-            </table>
+            <% for (Date date : (List<Date>) request.getAttribute("appointments")) { %>
+            <form action="/acceptAppointment" method="post">
+                <input type="text" name="patientname" value=<%= date.getPatientname() %>>
+                <input type="text" name="patientemail" value=<%= date.getPatientemail() %>>
+                <input type="text" name="day" value=<%= date.getDay() %>>
+                <input type="text" name="hour" value=<%= date.getHour() %>>
+                <input type="text" name="center" value=<%= date.getCenter() %>>
+                <input type="submit" name="accept" value="accept">
+                <input type="submit" name="reject" value="reject"><br>
+            </form>
+            <% } %>
         </div>
     </div>
 </div>
+
 </body>
 
 </html>

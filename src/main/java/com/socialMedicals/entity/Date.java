@@ -14,6 +14,8 @@ public class Date {
     private String doctor;
     private String patientemail;
     private String patientname;
+
+
     private String day;
     private String center;
     private String hour;
@@ -39,6 +41,19 @@ public class Date {
 
     public void setId(int id) {
         this.id = id;
+    }
+    @Override
+    public String toString() {
+        return "Date{" +
+                "id=" + id +
+                ", accepted=" + accepted +
+                ", doctor='" + doctor + '\'' +
+                ", patientemail='" + patientemail + '\'' +
+                ", patientname='" + patientname + '\'' +
+                ", day='" + day + '\'' +
+                ", center='" + center + '\'' +
+                ", hour='" + hour + '\'' +
+                '}';
     }
     public String getPatientemail() {
         return patientemail;
