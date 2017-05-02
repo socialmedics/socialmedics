@@ -31,26 +31,27 @@ public class ChangeDoctorController {
 
     @RequestMapping(value = "/changeDoctor", method = GET)
     public String selectDoctors(Model model, HttpServletRequest httpServletRequest) {
-        Medics medics = (Medics)httpServletRequest.getSession().getAttribute("emaildoctor");
-        model.addAttribute("center",medics.getCenter());
+        Medics medics = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
+        model.addAttribute("center", medics.getCenter());
         List<Medics> medicsList = new ArrayList<>();
-        for (Medics medics1: medicsRepository.findAll()) {
-            if(!medics.toString().equals(medics1.toString())){
+        for (Medics medics1 : medicsRepository.findAll()) {
+            if (!medics.toString().equals(medics1.toString())) {
                 medicsList.add(medics1);
             }
         }
-        model.addAttribute("medics",medicsList);
+        model.addAttribute("medics", medicsList);
         return "viewDoctors";
     }
 
     @RequestMapping(value = "/changeDoctor", method = POST)
-    public String changeDoctor(@RequestParam(name = "medics") String medics,
-                               HttpServletRequest httpServletRequest){
+    public String changeDoctor(@RequestParam(name = "medics") String medics) {
 
-        Medics medics1 = (Medics)httpServletRequest.getSession().getAttribute("emaildoctor");
-        for (Date date: dateRepository.findByDoctor(medics1.getName())) {
-          date.setDoctor(medics);
-          new UpdateDate(dateRepository).updateAccepted(date);
+        for (Date date : dateRepository.findAll()) {
+            if (date.getChange()) {
+                date.setDoctor(medics);
+                new UpdateDate(dateRepository).update(date);
+                date.setChange(false);
+            }
         }
 
         return "redirect:/viewAppointment";

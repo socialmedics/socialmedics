@@ -43,9 +43,8 @@ public class RequestDateController {
                                   HttpServletRequest httpServletRequest){
 
         Patient patient = (Patient) httpServletRequest.getSession().getAttribute("emailpatient");
-        date.setPatientemail(patient.getEmail());
-        date.setPatientname(patient.getName());
-        date.setAccepted(false);
+        date.update(patient);
+        System.out.println(date.toString());
         new CreateDate(dateRepository).execute(date);
         
         return "redirect:/welcomePatient";

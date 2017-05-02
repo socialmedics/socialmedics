@@ -27,41 +27,41 @@ public class AppointmentController {
         this.dateRepository = dateRepository;
     }
 
-    @RequestMapping(value = "/viewAppointment",method = RequestMethod.GET)
-    public String viewAppointments(Model model, HttpServletRequest httpServletRequest){
+    @RequestMapping(value = "/viewAppointment", method = RequestMethod.GET)
+    public String viewAppointments(Model model, HttpServletRequest httpServletRequest) {
         Medics medic = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
         List<Date> dates = dateRepository.findByDoctor(medic.getName());
         List<Date> datesNotAccepted = new ArrayList<>();
-        for (Date date: dates) {
+        for (Date date : dates) {
             if (!date.getAccepted()) {
                 datesNotAccepted.add(date);
             }
         }
-        model.addAttribute("appointments",datesNotAccepted);
-        model.addAttribute("doctor",medic);
+        model.addAttribute("appointments", datesNotAccepted);
+        model.addAttribute("doctor", medic);
         return "viewAppointment";
     }
 
     @RequestMapping(value = "/acceptAppointment", method = RequestMethod.POST)
     public String acceptAppointment(@ModelAttribute Date date,
-                                    @RequestParam(name = "accept",required = false)String accept,
-                                    HttpServletRequest httpServletRequest){
+                                    @RequestParam(name = "accept", required = false) String accept,
+                                    HttpServletRequest httpServletRequest) {
+
         Medics medic = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
         date.setDoctor(medic.getName());
         date.setAccepted(false);
-        System.out.println(date);
-
-        if(accept.equals("accept")){
+        date.setChange(false);
+        if (accept.equals("accept")) {
             date.setAccepted(true);
-            new UpdateDate(dateRepository).updateAccepted(date);
+            new UpdateDate(dateRepository).update(date);
             return "redirect:/doctorHome";
-        }if(accept.equals("reject")) {
-            Date date1 = dateRepository.findById(date.getId());
-            System.out.println(date1);
+        }
+        if (accept.equals("reject")) {
             dateRepository.delete(date.getId());
             return "redirect:/doctorHome";
         }
-
+        date.setChange(true);
+        new UpdateDate(dateRepository).update(date);
         return "redirect:/changeDoctor";
     }
 }

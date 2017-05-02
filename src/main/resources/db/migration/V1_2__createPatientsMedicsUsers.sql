@@ -64,9 +64,13 @@ CREATE TABLE public.dates
 (
     id SERIAL PRIMARY KEY NOT NULL,
     doctor VARCHAR(255) NOT NULL ,
-    patient VARCHAR(255) NOT NULL ,
+    patientemail VARCHAR(255) NOT NULL ,
+    patientname VARCHAR(255) NOT NULL ,
     day VARCHAR(40) NOT NULL,
-    center VARCHAR(40) NOT NULL
+    center VARCHAR(40) NOT NULL,
+    hour VARCHAR(40) NOT NULL,
+    change BOOLEAN NOT NULL,
+    accepted BOOLEAN NOT NULL
 );
 
 CREATE TABLE public.prescription

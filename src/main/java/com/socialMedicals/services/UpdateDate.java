@@ -13,7 +13,7 @@ public class UpdateDate {
         this.dateRepository = dateRepository;
     }
 
-    public void updateAccepted(Date date){
+    public void update(Date date){
         dateRepository.saveAndFlush(date);
     }
 

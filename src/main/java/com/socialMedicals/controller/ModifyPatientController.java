@@ -15,9 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
-/**
- * Created by yonay on 03/04/2017.
- */
+
 @Controller
 public class ModifyPatientController {
     private final PatientRepository patientRepository;
