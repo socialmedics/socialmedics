@@ -1,0 +1,71 @@
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+    width:100;
+}
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#login{
+    float:right;
+}
+
+body,header,footer{
+    background-color: whitesmoke;
+}
+
+/* Banner */
+
+#banner {
+    background-image: url(../img/dark_tint.png), url(../img/fondo3.jpg);
+    background-position: center center;
+    background-size: cover;
+    color: #ffffff;
+    padding: 14em 0em 14em;
+    text-align: center;
+}
+
+#banner :last-child {
+    margin-bottom: 0;
+}
+
+#banner h2 {
+    color: #ffffff;
+    font-size: 4em;
+    line-height: 1.25em;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+}
+
+#banner p {
+    font-size: 1.5em;
+    margin-bottom: 1.75em;
+    color: black;
+}
+
+@charset "UTF-8";
+@import url(font-awesome.min.css);
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,400);
+
+}
+
+
+
