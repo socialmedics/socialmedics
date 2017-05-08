@@ -36,5 +36,14 @@
     })();
 </script>
 <!-- End of LiveChat code -->
+<script>
+    if (window.Notification && Notification.permission !== "denied") {
+        Notification.requestPermission(function (status) {
+            var n = new Notification ("Bienvenido", {
+                body: 'Bienvenido <%= (String) request.getAttribute("name") %>'
+            })
+        })
+    }
+</script>
 </body>
 </html>
