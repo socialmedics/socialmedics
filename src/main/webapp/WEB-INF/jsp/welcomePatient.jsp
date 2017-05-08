@@ -18,18 +18,25 @@
 </div>
 
 <div class="container">
-    <div class="row" id="principal">
+    <div class="row" id="opcionespaciente">
         <div class="col m2 offset-md-5">
-            <h1>Bienvenido, <%= (String) request.getAttribute("name") %></h1>
-            <form action="/patientMedicalHistory" method="post">
-                <Button class="btn btn-link" type="submit" name="email" value=<%= (String) request.getAttribute("email") %>> Ver Historial Medico
-                </Button>
-            </form>
-            <form action="/modifyPatient">
-                <input type="submit" class="btn btn-link" value = "modificarPerfil"><br/>
-            </form>
-            <a href="/pedirCita" class="btn btn-link">Pedir Cita</a>
-            <a href="/prescriptionPatientView" class="btn btn-link">Ver Recetas</a>
+            <h1>Bienvenido, <%= (String) request.getAttribute("name") %></h1><br>
+            <h3>¿Que desea hacer?</h3>
+            <div id="cajaBotonesPaciente">
+                <form action="/patientMedicalHistory" method="post">
+                    <Button class="botones" type="submit" name="email" value=<%= (String) request.getAttribute("email") %>> Ver Historial Medico
+                    </Button>
+                </form>
+                <form action="/modifyPatient">
+                    <input type="submit" class="botones" value = "Modificar perfil"><br/>
+                </form>
+                <form action="/pedirCita">
+                    <input type="submit" class="botones" value = "Pedir cita"><br/>
+                </form>
+                <form action="/prescriptionPatientView">
+                    <input type="submit" class="botones" value = "Ver recetas"><br/>
+                </form>
+            </div>
         </div>
     </div>
 </div>
