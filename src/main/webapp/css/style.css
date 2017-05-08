@@ -19,3 +19,46 @@ html, body {
     margin-right: auto;
     width: 100%;
 }
+
+/* Tabla de registro de un nuevo centro */
+
+#newCenterTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#newCenterTable td, #newCenterTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#newCenterTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#newCenterTable tr:hover {background-color: #ddd;}
+
+#newCenterTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.greenButton{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 6px
+}
+
+.greenButton:hover{
+    background-color: #52BD56;
+}
+
+/* CSS Form nuevo centro */

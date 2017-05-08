@@ -3,11 +3,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Registrar Centros</title>
+        <title>Registro de centros</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/css/tether.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/style.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
@@ -17,12 +18,12 @@
         <div class="topnav">
             <a class="active" href="/">Inicio</a>
             <a href="/register">Registro</a>
-            <a href="/centerForm">Anadir un centro</a>
+            <a href="/centerForm">A&ntilde;adir un centro</a>
             <a href="/login" id="login">Iniciar sesion</a>
         </div>
         <div class="container">
             <div class="my-5 border-bottom">
-                <h1>Centros <small>Registrar</small></h1>
+                <h1>Nuevo centro</h1>
             </div>
 
             <form action="/centerForm" method="post">
@@ -67,20 +68,17 @@
                 </div>
 
                 <div class="form-group">
-                    <button class="btn btn-primary" type="submit">Crear</button>
+                    <button class="greenButton" type="submit">A&ntildeadir centro</button>
                 </div>
 
             </form>
-            <form action="/">
-                <input type="submit" class="btn btn-info" value="inicio">
-            </form>
 
             <div class="row my-5">
-                <table class="table">
+                <table id="newCenterTable">
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Nombre de Cenro</th>
+                            <th>Nombre de Centro</th>
                             <th>Direcci&oacute;n</th>
                             <th>Localidad</th>
                             <th>Provincia</th>

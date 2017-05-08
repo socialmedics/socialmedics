@@ -4,6 +4,17 @@ html, body {
     display: table;
     position: absolute;
 }
+
+h1{
+    color: black;
+    margin-bottom: 30px;
+}
+
+.col-form-label {
+    color: black;
+}
+
+
 .container {
     vertical-align: middle;
     margin-top: 20px;
@@ -21,3 +32,24 @@ html, body {
 .col-form-label{
     color: green;
 }
+
+/* CSS del botón */
+.greenButton{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 9px
+    margin-top:15px;
+    padding-top:12px;
+}
+
+.greenButton:hover{
+    background-color: #52BD56;
+}
+
+

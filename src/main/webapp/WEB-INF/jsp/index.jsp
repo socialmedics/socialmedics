@@ -15,7 +15,7 @@
         <div class="topnav">
             <a class="active" href="/">Inicio</a>
             <a href="/register">Registro</a>
-            <a href="/centerForm">Anadir un centro</a>
+            <a href="/centerForm">A&ntilde;adir un centro</a>
             <a href="/login" id="login">Iniciar sesion</a>
         </div>
 
