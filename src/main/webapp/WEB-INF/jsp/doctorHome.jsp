@@ -15,6 +15,7 @@
             <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
             <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
             <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario de atención</a>
+            <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
             <form action="/modifyDoctor">
                 <input type="submit" class="btn btn-link" value="modificarPerfil">
             </form>
