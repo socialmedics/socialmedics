@@ -19,7 +19,7 @@
     <a href="/centerForm">A&ntilde;adir un centro</a>
     <a href="/login" id="login">Iniciar sesion</a>
 </div>
-<div class="basic-grey">
+<div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <h1>Nuevo usuario</h1>
@@ -64,6 +64,7 @@
                     <div id="medicExtension"></div>
                     <input id="patientButton" type="radio" name="usuario" value="patient" checked/><strong class="col-form-label">Paciente</strong><br/>
                     <input id="medicButton" type="radio" name="usuario" value="medico"/><strong class="col-form-label">Medico</strong><br/>
+                    <input type="submit" class="botones" value="registrar"><br/>
                 </form>
             </div>
         </div>

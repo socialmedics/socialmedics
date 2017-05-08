@@ -28,35 +28,39 @@
     <a href="/centerForm">A&ntilde;adir un centro</a>
     <a href="/login" id="login">Iniciar sesion</a>
 </div>
-<div class="container">
+<div class="container" >
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <form action="/pedirCita" method="post">
-                <div class="form-group row" id="sandbox-container">
-                    <input type="text" class="form-control" name="day" id="requestdate">
-                </div>
-                <div class="form-group row" id="hour-container">
-                    <input type="text" class="form-control" name="hour">
-                </div>
-                <div class="form-group row">
-                    <select name="center" id="center-input" class="form-control">
-                        <option value="">-- Seleccionar centro --</option>
-                        <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
-                        <option value="<%= center.getName() %>"><%= center.getName() %>
-                        </option>
-                        <% } %>
-                    </select>
-                    <select name="doctor" id="doctor-input" class="form-control" disabled>
-                        <option value="">-- Seleccionar medico --</option>
-                    </select>
+            <h1>Pedir cita</h1><br>
+            <div id="border">
+                <form action="/pedirCita" method="post">
+                    <label>Fecha</label>
+                    <div class="form-group row" id="sandbox-container">
+                        <input type="text" class="form-control" name="day" id="requestdate">
+                    </div>
+                    <label>Hora: </label>
+                    <div class="form-group row" id="hour-container">
+                        <input type="text" class="form-control" name="hour">
+                    </div>
+                    <div class="form-group row">
+                        <select name="center" id="center-input" class="form-control">
+                            <option value="">-- Seleccionar centro --</option>
+                            <% for (Center center : (List<Center>) request.getAttribute("centers")) { %>
+                            <option value="<%= center.getName() %>"><%= center.getName() %>
+                            </option>
+                            <% } %>
+                        </select>
+                        <select name="doctor" id="doctor-input" class="form-control" disabled>
+                            <option value="">-- Seleccionar medico --</option>
+                        </select>
 
-                </div>
-                <div class="form-group row">
-                    <input type="submit" class="btn btn-info" value="Pedir Cita">
-                </div>
-            </form>
+                    </div>
+                    <div class="form-group row">
+                        <input type="submit" class="botones" value="Pedir Cita">
+                    </div>
+                </form>
+            </div>
         </div>
-
     </div>
 </div>
 <script>

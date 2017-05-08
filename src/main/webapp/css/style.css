@@ -114,4 +114,8 @@ html, body {
     margin-top: 40px;
 }
 
-/* Estilo de requestDate */
+/* Estilo de modifyPatient */
+#modifyPatientDiv{
+    margin-top:200px;
+}
+

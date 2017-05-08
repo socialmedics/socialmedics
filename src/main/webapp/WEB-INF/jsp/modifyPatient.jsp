@@ -62,10 +62,10 @@
                         <input class="form-control" type="password" name="password" value="<%=patient.getPassword()%>" id="password-input" required>
                     </div>
                 </div>
-                <input type="submit" class="btn btn-info" value="Modificar"><br />
+                <input type="submit" class="botones" value="Modificar"><br />
             </form>
             <form action="/welcomePatient">
-                <input type="submit" class="btn btn-info" value="Cancelar">
+                <input type="submit" class="botones" value="Cancelar">
             </form>
         </div>
     </div>
