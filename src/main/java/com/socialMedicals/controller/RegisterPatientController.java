@@ -47,7 +47,7 @@ public class RegisterPatientController {
             return "redirect:/";
         }
         new CreatePatient(patientRepository).execute(patient);
-        return "redirect:/register";
+        return "redirect:/";
     }
 
 

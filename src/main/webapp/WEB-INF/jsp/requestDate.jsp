@@ -19,8 +19,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body>
+<div class="topnav">
+    <a class="active" href="/">Inicio</a>
+    <a href="/register">Registro</a>
+    <a href="/centerForm">A&ntilde;adir un centro</a>
+    <a href="/login" id="login">Iniciar sesion</a>
+</div>
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">

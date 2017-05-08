@@ -64,7 +64,6 @@
                     <div id="medicExtension"></div>
                     <input id="patientButton" type="radio" name="usuario" value="patient" checked/><strong class="col-form-label">Paciente</strong><br/>
                     <input id="medicButton" type="radio" name="usuario" value="medico"/><strong class="col-form-label">Medico</strong><br/>
-                    <input type="submit" class="greenButton" value="registrar"><br/>
                 </form>
             </div>
         </div>
