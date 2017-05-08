@@ -21,20 +21,30 @@
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <h2>Citas</h2>
+            <h2>Citas pendientes de aceptar</h2>
             <% for (Date date : (List<Date>) request.getAttribute("appointments")) { %>
             <form action="/acceptAppointment" method="post">
-                <input type="hidden" name="id" value=<%= date.getId() %>>
-                <input type="text" name="patientname" value=<%= date.getPatientname() %>>
-                <input type="text" name="patientemail" value=<%= date.getPatientemail() %>>
-                <input type="text" name="day" value=<%= date.getDay() %>>
-                <input type="text" name="hour" value=<%= date.getHour() %>>
-                <input type="text" name="center" value=<%= date.getCenter() %>>
+                <input class="form-control-static" type="hidden" name="id" value=<%= date.getId() %>>
+                <input class="form-control-static" type="text" readonly name="patientname" value=<%= date.getPatientname() %>>
+                <input class="form-control-static" type="text" readonly name="patientemail" value=<%= date.getPatientemail() %>>
+                <input class="form-control-static" type="text" readonly name="day" value=<%= date.getDay() %>>
+                <input class="form-control-static" type="text" readonly name="hour" value=<%= date.getHour() %>>
+                <input class="form-control-static" type="text" readonly name="center" value=<%= date.getCenter() %>>
                 <input type="submit" name="accept" value="accept">
                 <input type="submit" name="accept" value="reasignar">
                 <input type="submit" name="accept" value="reject"><br>
             </form>
             <% } %>
+
+            <h2>Citas aceptadas</h2>
+            <% for (Date date : (List<Date>) request.getAttribute("acceptedAppointments")) { %>
+                <input class="form-control-static" type="text" readonly name="patientname" value=<%= date.getPatientname() %>>
+                <input class="form-control-static" type="text" readonly name="patientemail" value=<%= date.getPatientemail() %>>
+                <input class="form-control-static" type="text" readonly name="day" value=<%= date.getDay() %>>
+                <input class="form-control-static" type="text" readonly name="hour" value=<%= date.getHour() %>>
+                <input class="form-control-static" type="text" readonly name="center" value=<%= date.getCenter() %>><br>
+            <% } %>
+
             <form action="/doctorHome">
                 <input type="submit" class="btn btn-info" value = "Home">
             </form>
