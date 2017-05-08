@@ -17,7 +17,7 @@
     <a href="/login" id="login">Iniciar sesion</a>
 </div>
 <div class = "container">
-    <div class="row" id="principal">
+    <div class="row">
         <div class="col m2 offset-md-5">
             <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
             <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
@@ -30,6 +30,22 @@
             <form action="/viewAppointment">
                 <input type="submit" class="btn btn-info" value="viewAppointment">
             </form>
+
+<div id="banner">
+    <div class="container">
+        <div class="row" id="principal">
+            <div class="col m2 offset-md-5">
+                <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
+                <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
+                <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario de atención</a>
+                <form action="/modifyDoctor">
+                    <input type="submit" class="btn btn-link" value="modificarPerfil">
+                </form>
+                <a href="prescriptionForm">Redactar Recetas</a>
+                <form action="/viewAppointment">
+                    <input type="submit" class="btn btn-info" value="viewAppointment">
+                </form>
+            </div>
         </div>
     </div>
 </div>

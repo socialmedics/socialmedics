@@ -32,12 +32,16 @@ public class AppointmentController {
         Medics medic = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
         List<Date> dates = dateRepository.findByDoctor(medic.getName());
         List<Date> datesNotAccepted = new ArrayList<>();
+        List<Date> datesAccepted = new ArrayList<>();
         for (Date date : dates) {
             if (!date.getAccepted()) {
                 datesNotAccepted.add(date);
+            } else {
+                datesAccepted.add(date);
             }
         }
         model.addAttribute("appointments", datesNotAccepted);
+        model.addAttribute("acceptedAppointments", datesAccepted);
         model.addAttribute("doctor", medic);
         return "viewAppointment";
     }
