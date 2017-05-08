@@ -32,6 +32,7 @@ public class PrescriptionController {
     public String viewPatientListPrescription(Model model, HttpServletRequest httpServletRequest){
         Patient patient = (Patient) httpServletRequest.getSession().getAttribute("emailpatient");
         model.addAttribute("prescriptionList", prescriptionRepository.findByEmail(patient.getEmail()));
+        model.addAttribute( "name", patient.getName());
         return "prescriptionPatientView";
     }
 

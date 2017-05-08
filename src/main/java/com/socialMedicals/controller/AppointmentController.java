@@ -43,6 +43,7 @@ public class AppointmentController {
         model.addAttribute("appointments", datesNotAccepted);
         model.addAttribute("acceptedAppointments", datesAccepted);
         model.addAttribute("doctor", medic);
+        model.addAttribute("name", medic.getName());
         return "viewAppointment";
     }
 
