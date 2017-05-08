@@ -8,111 +8,61 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
+    <a class="active" href="/doctorHome">Inicio</a>
+    <a href="/modifyDoctor">Modificar perfil</a>    <a href="/register">Registro</a>
     <a href="/centerForm">A&ntilde;adir un centro</a>
     <a href="/login" id="login">Iniciar sesion</a>
 </div>
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-2">
-            <h1>Formulario Historial Medico</h1>
-            <form action="/doctorFormMedicalHistory" method="post">
+            <h1>Nuevo historial m&#233;dico</h1>
+            <form action="/doctorFormMedicalHistory" method="post" class="#historialMedico">
                 <table>
-                    <tr>
-                        <th>
-                            Nombre:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Nombre" name="name">
-                        </th>
-                        <th>
-                            Sexo:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Sexo" name="sex">
-                        </th>
-                        <th>
-                            Email:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Email" name="email">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Fecha de Nacimiento:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Fecha de Nacimiento" name="borndate">
+                    <tr><th> Nombre: </th>
+                    <th> <input type="text" placeholder="Nombre" name="name"> </th>
 
-                        </th>
-                        <th>
-                            Nacionalidad:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Nacionalidad" name="nationality">
+                    <th> Enfermedad: </th>
+                    <th> <textarea placeholder="Enfermedad presente" name="illness"></textarea> </th>
 
-                        </th>
-                        <th>
-                            Lugar de Nacimiento:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Lugar de Nacimiento" name="birthplace">
+                    <tr><th> Sexo: </th>
+                    <th> <input type="text" placeholder="Sexo" name="sex">  </th>
 
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Alergias:
-                        </th>
-                        <th>
-                            <textarea placeholder="Alergias del paciente" name="allergy"></textarea>
-                        </th>
-                        <th>
-                            Enfermedad:
-                        </th>
-                        <th>
-                            <textarea placeholder="Enfermedad presente" name="illness"></textarea>
-                        </th>
-                        <th>
-                            Diagnostico:
-                        </th>
-                        <th>
-                            <textarea placeholder="Diagnostico" name="diagnosis"></textarea>
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Fecha:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Fecha" name="historydate">
-                        </th>
-                        <th>
-                            Hora:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Hora" name="historytime">
-                        </th>
-                        <th>
-                            Doctor:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Doctor" name="doctor">
-                        </th>
-                        <th>
-                            Especialidad:
-                        </th>
-                        <th>
-                            <input type="text" placeholder="Especialidad" name="department">
-                        </th>
-                    </tr>
+                    <th> Diagnostico: </th>
+                    <th> <textarea placeholder="Diagnostico" name="diagnosis"></textarea></th>
+
+                    <tr><p><th> Email:  </th>
+                    <th> <input type="text" placeholder="Email" name="email"> </th>
+
+                    <th> Fecha: </th>
+                    <th> <input type="text" placeholder="Fecha" name="historydate"> </th></tr>
+
+                    <tr><th>Fecha de Nacimiento:</th>
+                    <th> <input type="text" placeholder="Fecha de Nacimiento" name="borndate"> </th>
+
+                    <th> Hora: </th>
+                    <th> <input type="text" placeholder="Hora" name="historytime"> </th></tr>
+
+                    <tr><th> Nacionalidad: </th>
+                    <th> <input type="text" placeholder="Nacionalidad" name="nationality"> </th>
+
+                    <th> Doctor: </th>
+                    <th> <input type="text" placeholder="Doctor" name="doctor"> </th></tr>
+
+                    <tr><th> Lugar de Nacimiento: </th>
+                    <th> <input type="text" placeholder="Lugar de Nacimiento" name="birthplace"> </th>
+
+                    <th> Especialidad: </th>
+                    <th> <input type="text" placeholder="Especialidad" name="department"> </th> </tr>
+
+                    <tr><th> Alergias: </th>
+                    <th> <textarea placeholder="Alergias del paciente" name="allergy"></textarea> </th>
                 </table>
-                <input type="submit" value="Guardar Historial">
+                <input type="submit" class="botones" value="Guardar Historial">
             </form>
         </div>
     </div>

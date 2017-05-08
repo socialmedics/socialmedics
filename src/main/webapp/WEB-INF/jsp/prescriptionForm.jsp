@@ -11,7 +11,8 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
+    <a class="active" href="/doctorHome">Inicio</a>
+    <a href="/modifyDoctor">Modificar perfil</a>
     <a href="/register">Registro</a>
     <a href="/centerForm">A&ntilde;adir un centro</a>
     <a href="/login" id="login">Iniciar sesion</a>

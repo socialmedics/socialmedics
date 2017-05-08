@@ -13,22 +13,22 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
+    <a class="active" href="/doctorHome">Inicio</a>
+    <a href="/modifyDoctor">Modificar perfil</a>    <a href="/register">Registro</a>
     <a href="/centerForm">A&ntilde;adir un centro</a>
     <a href="/login" id="login">Iniciar sesion</a>
 </div>
 <div class="container">
     <div class="row" id="principal">
-        <div class="col m2 offset-md-5">
+        <div class="col m2 offset-md-4">
 
-            <h1>PACIENTES</h1>
+            <h1>Pacientes</h1>
 
             <%
                 for (Patient patient : (List<Patient>) request.getAttribute("patients")) {
             %>
             <form action="/patientMedicalHistory" method="post">
-                <Button class="btn btn-link" name="email"
+                <Button class="botones" name="email"
                         value=<%= patient.getEmail() %> type="submit"><%= patient.getName() + " " + patient.getSurname() %>
                 </Button>
             </form>
