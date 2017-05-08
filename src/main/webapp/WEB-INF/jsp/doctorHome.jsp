@@ -15,28 +15,24 @@
     </a>
     <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
     <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
-    <a href="/logoutDoctor" id="login" >Cerrar Sesion</a>
+    <a href="/logoutDoctor" id="login">Cerrar Sesion</a>
 </div>
-<div class="container">
-    <div class="row" id="principal">
-        <div class="col m2 offset-md-5">
-            <div class="btn-margin-top">
-                <form action="/doctorMedicalHistory">
-                    <input type="submit" class="btn btn-info" value="Ver historial de Pacientes"><br/>
-                </form>
-                <form action="/doctorFormMedicalHistory">
-                    <input type="submit" class="btn btn-info" value="Redactar Historial Medico"><br/>
-                </form>
-                <form action="/prescriptionForm">
-                    <input type="submit" class="btn btn-info" value="Redactar Recetas"><br/>
-                </form>
-                <form action="/viewAppointment">
-                    <input type="submit" class="btn btn-info" value="viewAppointment">
-                </form>
-            </div>
-        </div>
+<section id="banner">
+    <div class="input-center">
+        <form action="/doctorMedicalHistory">
+            <input type="submit" class="btn btn-info" value="Ver historial de Pacientes"><br/>
+        </form>
+        <form action="/doctorFormMedicalHistory">
+            <input type="submit" class="btn btn-info" value="Redactar Historial Medico"><br/>
+        </form>
+        <form action="/prescriptionForm">
+            <input type="submit" class="btn btn-info" value="Redactar Recetas"><br/>
+        </form>
+        <form action="/viewAppointment">
+            <input type="submit" class="btn btn-info" value="Ver Citas">
+        </form>
     </div>
-</div>
+</section>
 <script>
     if (window.Notification && Notification.permission !== "denied") {
         Notification.requestPermission(function (status) {

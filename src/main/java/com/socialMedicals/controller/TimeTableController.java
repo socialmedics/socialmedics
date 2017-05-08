@@ -31,6 +31,8 @@ public class TimeTableController {
         Medics medic = medicsRepository.findById(medicId);
         List<TimeTable> timeTables = timeTableRepository.findByMedicId(medicId);
         model.addAttribute("medic", medic);
+        model.addAttribute("name",medic.getName());
+        model.addAttribute("id", medic.getId());
         model.addAttribute("timeTables", timeTables != null ? timeTables : new ArrayList<TimeTable>());
         return "timeTable";
     }

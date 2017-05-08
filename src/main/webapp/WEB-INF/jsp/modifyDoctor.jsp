@@ -14,10 +14,11 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
-    <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
+    <a href="/modifyDoctor" class="active"><%= (String) request.getAttribute("name") %>
+    </a>
+    <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
+    <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
+    <a href="/logoutDoctor" id="login">Cerrar Sesion</a>
 </div>
 <div class="container">
     <%Medics medic =(Medics) request.getAttribute("doctor");%>
@@ -74,7 +75,7 @@
                         <input class="form-control" type="password" name="access" value="<%=medic.getAccess()%>" id="identificacion-input" readonly="readonly">
                     </div>
                 </div>
-                <input type="submit" class="btn btn-info" value="registrar"><br />
+                <input type="submit" class="btn btn-info" value="modificar"><br />
             </form>
             <form action="/doctorHome">
                 <input type="submit" class="btn btn-info" value="cancelar">

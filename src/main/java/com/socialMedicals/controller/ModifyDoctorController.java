@@ -31,6 +31,8 @@ public class ModifyDoctorController {
     public String modifyDoctor(Model model, HttpServletRequest httpServletRequest) {
         Medics medics = (Medics)httpServletRequest.getSession().getAttribute("emaildoctor");
         model.addAttribute("doctor", medics);
+        model.addAttribute("name",medics.getName());
+        model.addAttribute("id", medics.getId());
         model.addAttribute("centers",centerRepository.findAll());
         return "modifyDoctor";
     }

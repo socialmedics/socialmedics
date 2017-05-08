@@ -16,7 +16,6 @@
     <a class="active" href="/">Inicio</a>
     <a href="/register">Registro</a>
     <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
 </div>
 <div class="pen-title">
 
@@ -30,7 +29,7 @@
         <img id="logologin" src="<%= request.getContextPath() %>/img/minilogo.png">
         <h2>Iniciar sesion</h2>
         <form action="/login" method="post">
-            <input class="form-control" type="text" placeholder="Usuario" name="email" id="email-input"/>
+            <input class="form-control" type="text" placeholder="Correo" name="email" id="email-input"/>
             <input class="form-control" type="password" name="password" id="password-input" placeholder="Contrase&ntilde;a"/>
             <input type="submit" class="greenButton" value="Login">
         </form>
