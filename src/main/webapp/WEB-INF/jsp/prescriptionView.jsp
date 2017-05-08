@@ -10,16 +10,14 @@
     <title>WelcomePatient</title>
 </head>
 <body>
+<% Prescription prescription = (Prescription) request.getAttribute("prescription"); %>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
-    <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
+    <a class="active" href="/welcomePatient"><%= prescription.getName()%></a>
+    <a href="/logoutPatient" id="login">Cerrar sesion</a>
 </div>
 <div class="container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <% Prescription prescription = (Prescription) request.getAttribute("prescription"); %>
             <h1> Receta del Paciente:   <%= prescription.getName() %>
             </h1>
             <table>

@@ -12,10 +12,8 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
-    <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
+    <a class="active" href="/welcomePatient"><%= (String) request.getAttribute("name") %></a>
+    <a href="/logoutPatient" id="login">Cerrar sesion</a>
 </div>
 
 <div class="container">

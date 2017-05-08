@@ -13,14 +13,14 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
-    <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
+    <a class="active" href="/welcomePatient"><%= (String) request.getAttribute("name") %></a>
+    <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
+    <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
+    <a href="/logoutDoctor" id="login">Cerrar sesion</a>
 </div>
 <div class="container">
     <div class="row" id="principal">
-        <div class="col m2 offset-md-5">
+        <div class="col m2 offset-md-1">
             <h2>Citas pendientes de aceptar</h2>
             <% for (Date date : (List<Date>) request.getAttribute("appointments")) { %>
             <form action="/acceptAppointment" method="post">
