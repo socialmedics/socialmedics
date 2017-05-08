@@ -11,37 +11,25 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
-    <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
+    <a href="/modifyDoctor" class="active"><%= (String) request.getAttribute("name") %>
+    </a>
+    <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
+    <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
+    <a href="/logoutDoctor" id="login" >Cerrar Sesion</a>
 </div>
-<div class = "container">
-    <div class="row">
+<div class="container">
+    <div class="row" id="principal">
         <div class="col m2 offset-md-5">
-            <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
-            <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
-            <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario de atención</a>
-            <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
-            <form action="/modifyDoctor">
-                <input type="submit" class="btn btn-link" value="modificarPerfil">
-            </form>
-            <a href="prescriptionForm">Redactar Recetas</a>
-            <form action="/viewAppointment">
-                <input type="submit" class="btn btn-info" value="viewAppointment">
-            </form>
-
-<div id="banner">
-    <div class="container">
-        <div class="row" id="principal">
-            <div class="col m2 offset-md-5">
-                <a href="doctorMedicalHistory">Ver historial de Pacientes</a>
-                <a href="doctorFormMedicalHistory">Redactar Historial Medico</a>
-                <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario de atención</a>
-                <form action="/modifyDoctor">
-                    <input type="submit" class="btn btn-link" value="modificarPerfil">
+            <div class="btn-margin-top">
+                <form action="/doctorMedicalHistory">
+                    <input type="submit" class="btn btn-info" value="Ver historial de Pacientes"><br/>
                 </form>
-                <a href="prescriptionForm">Redactar Recetas</a>
+                <form action="/doctorFormMedicalHistory">
+                    <input type="submit" class="btn btn-info" value="Redactar Historial Medico"><br/>
+                </form>
+                <form action="/prescriptionForm">
+                    <input type="submit" class="btn btn-info" value="Redactar Recetas"><br/>
+                </form>
                 <form action="/viewAppointment">
                     <input type="submit" class="btn btn-info" value="viewAppointment">
                 </form>
@@ -52,7 +40,7 @@
 <script>
     if (window.Notification && Notification.permission !== "denied") {
         Notification.requestPermission(function (status) {
-            var n = new Notification ("Bienvenido", {
+            var n = new Notification("Bienvenido", {
                 body: 'Bienvenido <%= (String) request.getAttribute("name") %>'
             })
         })
