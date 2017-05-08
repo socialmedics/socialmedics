@@ -138,3 +138,20 @@ body {
     margin-top: 15px;
     margin-bottom: 30px;
 }
+
+/* Login button */
+.greenButton{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 6px
+}
+
+.greenButton:hover{
+    background-color: #52BD56;
+}

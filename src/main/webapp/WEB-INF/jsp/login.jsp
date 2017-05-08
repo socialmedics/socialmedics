@@ -26,23 +26,13 @@
     <div class="toggle"><i class="fa fa-times fa-pencil"></i>
         <div class="tooltip">Click Me</div>
     </div>
-    <div class="form">
+    <div class="form" action="/login" method=post">
         <img id="logologin" src="<%= request.getContextPath() %>/img/minilogo.png">
         <h2>Iniciar sesion</h2>
-        <form>
-            <input type="text" placeholder="Usuario"/>
-            <input type="password" placeholder="Contrase&ntilde;a"/>
-            <button>Login</button>
-        </form>
-    </div>
-    <div class="form">
-        <h2>Create an account</h2>
-        <form>
-            <input type="text" placeholder="Username"/>
-            <input type="password" placeholder="Password"/>
-            <input type="email" placeholder="Email Address"/>
-            <input type="tel" placeholder="Phone Number"/>
-            <button>Register</button>
+        <form action="/login" method="post">
+            <input class="form-control" type="text" placeholder="Usuario" name="email" id="email-input"/>
+            <input class="form-control" type="password" name="password" id="password-input" placeholder="Contrase&ntilde;a"/>
+            <input type="submit" class="greenButton" value="Login">
         </form>
     </div>
 </div>
