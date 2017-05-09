@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -70,12 +71,15 @@ public class DoctorController {
     }
 
     @RequestMapping(value = "/prescriptionForm", method = GET)
-    public String doctorPrescription (Model model) {
+    public String doctorPrescription(Model model, HttpServletRequest httpServletRequest) {
         return "prescriptionForm";
     }
 
     @RequestMapping(value = "/prescriptionForm", method = POST)
-    public String doctorPrescriptionForm (Prescription prescription) {
+    public String doctorPrescriptionForm(Prescription prescription, HttpServletRequest httpServletRequest) {
+        Medics medics = (Medics)httpServletRequest.getSession().getAttribute("emaildoctor");
+        prescription.setDoctor(medics.getName());
+        prescription.setDepartment(medics.getEspecialidad());
         new CreatePrescription(prescriptionRepository).execute(prescription);
         return "redirect:/doctorHome";
     }
