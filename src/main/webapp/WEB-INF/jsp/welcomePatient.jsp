@@ -11,7 +11,8 @@
 <body>
 
 <div class="topnav">
-    <a href="/modifyPatient" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/welcomePatient" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/modifyPatient">Perfil</a>
     <a href="/logoutPatient" id="login">Cerrar Sesion</a>
 </div>
 
@@ -19,9 +20,8 @@
     <div class="row" id="opcionespaciente">
         <div class="col m2 offset-md-5">
             <h1>Bienvenido, <%= (String) request.getAttribute("name") %></h1><br>
-            <h3>¿Que desea hacer?</h3>
             <div id="cajaBotonesPaciente">
-                <form action="/patientMedicalHistory" method="post">
+                <form action="/patientHistory" method="post">
                     <Button class="botones" type="submit" name="email" value=<%= (String) request.getAttribute("email") %>> Ver Historial Medico
                     </Button>
                 </form>

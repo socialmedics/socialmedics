@@ -11,10 +11,11 @@
 </head>
 <body>
 <div class="topnav">
-    <a class="active" href="/">Inicio</a>
-    <a href="/register">Registro</a>
-    <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
+    <a href="/doctorHome" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/modifyDoctor">Perfil</a>
+    <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
+    <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
+    <a href="/logoutDoctor" id="login">Cerrar Sesion</a>
 </div>
 <div class="container">
     <div class="row" id="principal">
