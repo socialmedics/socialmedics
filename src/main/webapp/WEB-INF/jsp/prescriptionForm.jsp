@@ -13,6 +13,7 @@
 <div class="topnav">
     <a class="active" href="/doctorHome">Inicio</a>
     <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
+    <a href="/logoutDoctor" id="login">Cerrar Sesion</a>
 </div>
 <section class="text-muted" id="banner">
     <div class="input-center">
