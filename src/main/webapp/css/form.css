@@ -1,3 +1,7 @@
+body{
+    background-image: url(../img/fondo3.jpg);
+}
+
 input[type=text], select {
     width: 100%;
     padding: 6px 10px;

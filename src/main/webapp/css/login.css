@@ -5,7 +5,7 @@ body {
     font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url(../img/dark_tint.png), url(../img/fondo3.jpg);
+    background-image: url(../img/fondo3.jpg);
 }
 
 /* Pen Title */

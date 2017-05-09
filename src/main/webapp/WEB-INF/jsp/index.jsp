@@ -18,12 +18,10 @@
             <a href="/centerForm">A&ntilde;adir un centro</a>
             <a href="/login" id="login">Iniciar sesion</a>
         </div>
-
         <!-- Banner -->
         <section id="banner">
             <img src="<%= request.getContextPath() %>/img/logo.png">
             <p>Medicos y pacientes, siempre en contacto</p>
         </section>
-
     </body>
 </html>
