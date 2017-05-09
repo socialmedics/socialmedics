@@ -13,18 +13,16 @@
 </head>
 <body>
 <div class="topnav">
-    <a href="/doctorHome" class="active"><%= (String) request.getAttribute("name") %></a>
-    <a href="/modifyDoctor">Perfil</a>
-    <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
-    <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
-    <a href="/logoutDoctor" id="login">Cerrar Sesion</a>
+    <a href="/welcomePatient" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/modifyPatient">Perfil</a>
+    <a href="/logoutPatient" id="login">Cerrar Sesion</a>
 </div>
 <div class = "container">
     <div class="row" id="principal">
         <div class="col m2 offset-md-5">
             <% for ( MedicalHistory medicalHistory : (List<MedicalHistory>) request.getAttribute("medicalHistory") ){
-                %>
-            <form action="/doctorMedicalHistory" method="post">
+            %>
+            <form action="/medicalHistoryPatient" method="post">
                 <input type="hidden" name="date" value= <%= medicalHistory.getHistorydate() %>>
                 <input type="hidden" name="time" value= <%= medicalHistory.getHistorytime() %>>
                 <Button class="btn btn-link" name="email"
@@ -32,7 +30,7 @@
                 </Button>
             </form>
             <%
-            }
+                }
             %>
         </div>
     </div>

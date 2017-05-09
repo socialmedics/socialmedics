@@ -11,14 +11,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/navbar.css">
-
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
 </head>
 
 <body>
 <div class="topnav">
-    <a href="/modifyDoctor" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/doctorHome" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/modifyDoctor">Perfil</a>
     <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
     <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
     <a href="/logoutDoctor" id="login">Cerrar Sesion</a>

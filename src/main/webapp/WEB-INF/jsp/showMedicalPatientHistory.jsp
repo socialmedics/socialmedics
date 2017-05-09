@@ -12,11 +12,9 @@
 </head>
 <body>
 <div class="topnav">
-    <a href="/doctorHome" class="active"><%= (String) request.getAttribute("name") %></a>
-    <a href="/modifyDoctor">Perfil</a>
-    <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
-    <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
-    <a href="/logoutDoctor" id="login">Cerrar Sesion</a>
+    <a href="/welcomePatient" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/modifyPatient">Perfil</a>
+    <a href="/logoutPatient" id="login">Cerrar Sesion</a>
 </div>
 <%
     MedicalHistory medicalHistory = (MedicalHistory) request.getAttribute("medicalHistory");

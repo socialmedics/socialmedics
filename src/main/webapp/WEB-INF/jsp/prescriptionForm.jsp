@@ -12,66 +12,49 @@
 <body>
 <div class="topnav">
     <a class="active" href="/doctorHome">Inicio</a>
-    <a href="/modifyDoctor">Modificar perfil</a>
-    <a href="/register">Registro</a>
-    <a href="/centerForm">A&ntilde;adir un centro</a>
-    <a href="/login" id="login">Iniciar sesion</a>
+    <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
 </div>
-<div class="container">
-    <div class="row" id="principal">
-        <div class="col m2 offset-md-2">
-            <h1>Formulario Historial Medico</h1>
-            <form action="/prescriptionForm" method="post">
-                <table>
-                    <tr>
-                        <th>
-                            Nombre:
-                            <input type="text" placeholder="Nombre" name="name">
-                        </th>
-                        <th>
-                            Email:
-                            <input type="text" placeholder="Email" name="email">
-                        </th>
-                        <th>
-                            Sexo:
-                            <input type="text" placeholder="Sexo" name="sex">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Fecha:
-                            <input type="text" placeholder="Fecha" name="historydate">
-                        </th>
-                        <th>
-                            Hora:
-                            <input type="text" placeholder="Hora" name="historytime">
-                        </th>
-                        <th>
-                            Doctor:
-                            <input type="text" placeholder="Doctor" name="doctor">
-                        </th>
-                        <th>
-                            Especialidad:
-                            <input type="text" placeholder="Especialidad" name="department">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Enfermedad:
-                            <input placeholder="Diagnostico" name="illness">
-                        </th>
-                    </tr>
-                    <tr>
-                        <th>
-                            Recetario:
-                            <textarea placeholder="Medicamentos" name="medicament"></textarea>
-                        </th>
-                    </tr>
-                </table>
-                <input type="submit" value="Guardar Receta">
-            </form>
-        </div>
+<section class="text-muted" id="banner">
+    <div class="input-center">
+       <%-- <div class="row" id="principal">
+            <div class="col m2 offset-md-2">--%>
+                <h1>Receta</h1>
+                <form action="/prescriptionForm" method="post">
+                                Nombre:
+
+                                <input type="text" placeholder="Nombre" name="name">
+
+                                Email:
+
+                                <input type="text" placeholder="Email" name="email">
+
+                                Sexo:
+
+                                <input type="text" placeholder="Sexo" name="sex">
+
+                                Fecha:
+
+                                <input type="text" placeholder="Fecha" name="historydate">
+
+                                Enfermedad:
+
+                                <input placeholder="Diagnostico" name="illness">
+
+                                Hora:
+
+                                <input type="text" placeholder="Hora" name="historytime">
+
+                </form>
+            </div>
+    <div class="input-center">
+        <br><br>
+        <textarea placeholder="Medicamentos" name="medicament"></textarea>
     </div>
-</div>
+    <div class="input-center">
+        <input class="btn btn-info" type="submit" value="Guardar Receta">
+    </div>
+ <%--       </div>
+    </div>--%>
+</section>
 </body>
 </html>
