@@ -16,45 +16,74 @@
 </div>
 <section class="text-muted" id="banner">
     <div class="input-center">
-       <%-- <div class="row" id="principal">
-            <div class="col m2 offset-md-2">--%>
                 <h1>Receta</h1>
+        <div class="row" id="principal">
+            <div class="col m3 offset-md-3">
                 <form action="/prescriptionForm" method="post">
+                    <table>
+                        <tr>
+                            <td>
                                 Nombre:
-
+                            </td>
+                            <td>
                                 <input type="text" placeholder="Nombre" name="name">
-
+                            </td>
+                            <td>
                                 Email:
-
+                            </td>
+                            <td>
                                 <input type="text" placeholder="Email" name="email">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Fecha:
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Fecha" name="historydate">
+                            </td>
+                            <td>
+                                Hora:
+                            </td>
+                            <td>
+                                <input type="text" placeholder="Hora" name="historytime">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Enfermedad:
+                            </td>
+                            <td>
+                                <input placeholder="Diagnostico" name="illness">
+                            </td>
+                            <td>
 
                                 Sexo:
-
+                            </td>
+                            <td>
                                 <input type="text" placeholder="Sexo" name="sex">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Recetario:
+                            </td>
+                            <td>
+                                <textarea placeholder="Medicamentos" name="medicament"></textarea>
+                            </td>
+                            <td>
+                                <input class="btn btn-info" type="submit" value="Guardar Receta">
+                            </td>
+                        </tr>
+                    </table>
 
-                                Fecha:
-
-                                <input type="text" placeholder="Fecha" name="historydate">
-
-                                Enfermedad:
-
-                                <input placeholder="Diagnostico" name="illness">
-
-                                Hora:
-
-                                <input type="text" placeholder="Hora" name="historytime">
 
                 </form>
             </div>
-    <div class="input-center">
-        <br><br>
-        <textarea placeholder="Medicamentos" name="medicament"></textarea>
+            <div class="input-center">
+            </div>
+        </div>
     </div>
-    <div class="input-center">
-        <input class="btn btn-info" type="submit" value="Guardar Receta">
-    </div>
- <%--       </div>
-    </div>--%>
 </section>
 </body>
 </html>
