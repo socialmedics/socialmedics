@@ -11,8 +11,8 @@
 </head>
 <body>
 <div class="topnav">
-    <a href="/modifyDoctor" class="active"><%= (String) request.getAttribute("name") %>
-    </a>
+    <a href="/doctorHome" class="active"><%= (String) request.getAttribute("name") %></a>
+    <a href="/modifyDoctor">Perfil</a>
     <a href="/timetable/<%=(Integer)request.getAttribute("id")%>">Horario</a>
     <a href="https://my.livechatinc.com" target="_blank">Live Chat</a>
     <a href="/logoutDoctor" id="login">Cerrar Sesion</a>

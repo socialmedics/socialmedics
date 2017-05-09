@@ -42,18 +42,27 @@ public class DoctorController {
     @RequestMapping(value = "/doctorMedicalHistory", method = POST)
     public String doctorMedicalHistory (@RequestParam(name = "date", required = false) String historyDate,
                                         @RequestParam(name = "time", required = false) String historyTime,
-                                        Model model){
+                                        Model model,HttpServletRequest httpServletRequest){
         MedicalHistory medicalHistory = medicalHistoryRepository.findHistoryByHistorydateAndHistorytime(historyDate, historyTime);
+        Medics medics = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
+        model.addAttribute("email",medics.getEmail());
+        model.addAttribute("name",medics.getName());
+        model.addAttribute("id", medics.getId());
         model.addAttribute("medicalHistory", medicalHistory);
         return "showMedicalHistory";
     }
 
     @RequestMapping(value = "/patientMedicalHistory", method = POST)
-    public String patientMedicalHistory (@RequestParam(name = "email", required = false) String email, Model model){
+    public String patientMedicalHistory (HttpServletRequest httpServletRequest,@RequestParam(name = "email", required = false) String email, Model model){
         List<MedicalHistory> medicalHistoryList = medicalHistoryRepository.findByEmail(email);
+        Medics medics = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
+        model.addAttribute("email",medics.getEmail());
+        model.addAttribute("name",medics.getName());
+        model.addAttribute("id", medics.getId());
         model.addAttribute("medicalHistory", medicalHistoryList);
         return "showPatientMedicalHistory";
     }
+
 
     @RequestMapping(value = "/doctorFormMedicalHistory", method = GET)
     public String doctorMedicalHistory (Model model) {

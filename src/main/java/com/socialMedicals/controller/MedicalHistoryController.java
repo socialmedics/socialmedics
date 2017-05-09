@@ -1,6 +1,7 @@
 package com.socialMedicals.controller;
 
 import com.socialMedicals.entity.MedicalHistory;
+import com.socialMedicals.entity.Medics;
 import com.socialMedicals.entity.Patient;
 import com.socialMedicals.repository.MedicalHistoryRepository;
 import com.socialMedicals.repository.PatientRepository;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class MedicalHistoryController {
     }
 
     @RequestMapping(value = "/doctorMedicalHistory", method = GET)
-    public String findAllHistories(Model model) {
+    public String findAllHistories(Model model, HttpServletRequest httpServletRequest) {
         List<Patient> patients = new ArrayList<>();
         for (Patient aPatientList : patientRepository.findAll()) {
             for (MedicalHistory aMedicalHistoryList : medicalHistoryRepository.findAll()) {
@@ -41,6 +43,10 @@ public class MedicalHistoryController {
                 }
             }
         }
+        Medics medics = (Medics) httpServletRequest.getSession().getAttribute("emaildoctor");
+        model.addAttribute("email",medics.getEmail());
+        model.addAttribute("name",medics.getName());
+        model.addAttribute("id", medics.getId());
         model.addAttribute("patients", patients);
         return "doctorMedicalHistory";
     }
