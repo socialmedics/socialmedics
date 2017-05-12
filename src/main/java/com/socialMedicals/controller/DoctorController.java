@@ -125,17 +125,5 @@ public class DoctorController {
         return medicsRepository.findByCenter(center);
     }
 
-    @RequestMapping(value = "/prescriptionForm", method = GET)
-    public String doctorPrescription(Model model, HttpServletRequest httpServletRequest) {
-        return "prescriptionForm";
-    }
 
-    @RequestMapping(value = "/prescriptionForm", method = POST)
-    public String doctorPrescriptionForm(Prescription prescription, HttpServletRequest httpServletRequest) {
-        Medics medics = (Medics)httpServletRequest.getSession().getAttribute("emaildoctor");
-        prescription.setDoctor(medics.getName());
-        prescription.setDepartment(medics.getEspecialidad());
-        new CreatePrescription(prescriptionRepository).execute(prescription);
-        return "redirect:/doctorHome";
-    }
 }
